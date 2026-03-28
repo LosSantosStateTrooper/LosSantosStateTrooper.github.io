@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>準備中 | LSST GALLERY</title>
+    
+    <link rel="icon" href="icon.png" type="image/png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 700 !important;
+            background-color: #1a1a1a; /* 準備中は黒背景 */
+            color: white;
+            overflow: hidden; /* スクロールを禁止 */
+            height: 100vh;
+        }
+
+        * {
+            font-weight: 700 !important;
+        }
+
+        /* ナビゲーションバー (indexと完全一致) */
+        .navbar.is-dark { background-color: #1a1a1a; }
+        .navbar-item { color: white !important; font-weight: 900 !important; }
+
+        /* 全面背景 (policeStation7.png) */
+        .maintenance-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), 
+                        url('policeStation7.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 3.25rem; /* navbarの高さ分下げる */
+        }
+
+        /* 準備中テキスト */
+        .maintenance-title {
+            font-size: 5rem;
+            font-weight: 900 !important;
+            color: white;
+            text-shadow: 0 0 20px rgba(50, 115, 220, 0.8); /* LSSTブルーの光 */
+            letter-spacing: 0.5rem;
+            margin-bottom: 20px;
+        }
+
+        .maintenance-subtitle {
+            font-size: 1.5rem;
+            color: #bdc3c7;
+            letter-spacing: 0.1rem;
+        }
+
+        /* フッター (indexと完全一致) */
+        footer {
+            background-color: #000 !important;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        footer p { color: #ccc !important; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar is-dark is-fixed-top">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="index.html">
+                    <img src="icon.png" alt="LSST ICON">
+                    <span style="color: #3273dc; margin-left: 5px;">LS</span>ST 公式ポータル
+                </a>
+            </div>
+            <div class="navbar-menu is-active">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="about.html">組織概要</a>
+                    <a class="navbar-item" href="divisions.html">部隊紹介</a>
+                    <a class="navbar-item" href="gallery.html">ギャラリー</a>
+                    <a class="navbar-item" href="recruit.html">入隊申請</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="maintenance-hero">
+        <div class="container">
+            <h1 class="maintenance-title">準備中</h1>
+            <p class="maintenance-subtitle">LSST GALLERY - COMING SOON -</p>
+            <p class="mt-4 is-size-5 has-text-grey">現在、活動写真の選定および整理を行っております。</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>© 2026 Los Santos State Trooper. <br>このサイトはゲーム内ロールプレイ用の架空の組織のものです。</p>
+        </div>
+    </footer>
+
+</body>
+</html>
