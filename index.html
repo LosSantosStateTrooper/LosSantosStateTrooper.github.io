@@ -4,9 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LSST | ロスサントス州警察</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
+        /* ★フォントをサイト全体に適用★ */
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f5f5f5;
+        }
+
         /* Bulmaの初期スタイルを一部上書き */
         .navbar.is-dark { background-color: #1a1a1a; }
         .navbar-item, .navbar-link { color: white !important; font-weight: bold; }
@@ -21,8 +33,18 @@
             background-attachment: fixed;
             color: white !important;
         }
-        .hero .title { color: white !important; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); }
-        .hero .subtitle { color: #f0f0f0 !important; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); }
+        /* タイトル・サブタイトルのフォント調整 */
+        .hero .title { 
+            color: white !important; 
+            font-weight: 900; /* 最も太く */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7); 
+            letter-spacing: 0.1rem; /* 少し字間を広げる */
+        }
+        .hero .subtitle { 
+            color: #f0f0f0 !important; 
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7); 
+            line-height: 1.8; /* 行間を広げて読みやすく */
+        }
 
         /* アイコン画像のスタイル調整 */
         .navbar-brand .navbar-item img {
@@ -30,36 +52,34 @@
             margin-right: 10px;
         }
 
-        /* スクロール後のコンテンツセクション (参考画像を元に作成) */
-        .info-cards { background-color: #f5f5f5; padding: 60px 0; }
+        /* スクロール後のコンテンツセクション */
+        .info-cards { padding: 60px 0; }
         .info-card {
             background: white;
             padding: 30px;
             border-radius: 4px;
             box-shadow: 0 2px 3px rgba(10,10,10,0.1);
-            text-align: center;
             height: 100%;
-            border-top: 4px solid #f5f5f5; /* Bulmaのデフォルト */
+            border-top: 4px solid #f5f5f5; 
             transition: border-color 0.3s;
         }
-        /* カードにホバーした時の色 (警察カラー) */
-        .info-card:hover { border-top-color: #0056b3; }
+        .info-card:hover { border-top-color: #002d62; } /* 濃い青 */
         .info-card .icon-box {
             font-size: 3rem;
             margin-bottom: 20px;
-            color: #1a1a1a; /* デフォルトは黒系 */
+            color: #ccc; /* デフォルトは薄いグレー */
+            text-align: center;
         }
-        /* ホバー時にアイコンの色も変える */
-        .info-card:hover .icon-box { color: #0056b3; }
+        .info-card:hover .icon-box { color: #002d62; }
 
-        /* 青い横長バー (参考画像を元に作成) */
+        /* 青い横長バー */
         .blue-banner {
             background-color: #002d62; /* 濃い青 */
             color: white;
             padding: 40px 0;
             position: relative;
         }
-        .blue-banner .title { color: white !important; font-weight: bold; }
+        .blue-banner .title { color: white !important; font-weight: 700; }
         .blue-banner .subtitle { color: #d0d0d0 !important; }
         .blue-banner .car-icon-bg {
             position: absolute;
@@ -67,7 +87,7 @@
             top: 50%;
             transform: translateY(-50%);
             font-size: 8rem;
-            color: rgba(255,255,255,0.05); /* うっすら見える車アイコン */
+            color: rgba(255,255,255,0.05); 
         }
     </style>
 </head>
@@ -97,7 +117,7 @@
         <div class="hero-body">
             <div class="container has-text-centered">
                 <h1 class="title is-1">Los Santos State Trooper</h1>
-                <p class="subtitle is-3">港湾地区から北部の未編入地域まで、<br>ロスサントス全域をカバーする精鋭部隊</p>
+                <p class="subtitle is-3">港湾地区から北部の未編入地域に至るまで、<br>州内全域の治安維持および交通安全を担う法執行機関</p>
             </div>
         </div>
     </section>
@@ -109,24 +129,24 @@
                 <div class="column is-5">
                     <div class="info-card">
                         <div class="icon-box">
-                            <i class="fas fa-traffic-light"></i> </div>
-                        <h3 class="title is-4">交通違反取締月間</h3>
-                        <p class="subtitle is-6">実施期間: 2026年4月1日 〜 4月30日</p>
-                        <p>春の交通安全運動に伴い、州内全域にて速度超過、信号無視の取締を強化します。安全運転を心がけてください。</p>
+                            <i class="fas fa-bullhorn"></i> </div>
+                        <h3 class="title is-4">春季特別交通安全運動の実施</h3>
+                        <p class="subtitle is-6">実施期間: 2026年4月1日 〜 4月15日</p>
+                        <p>サンアンドレアス州知事の通達に基づき、州内主要幹線道路にて速度超過、飲酒運転の取締を強化します。特に港湾地区周辺の大型車両への監視を徹底します。</p>
                         <br>
-                        <a href="about.html" class="button is-small is-light">詳細を見る →</a>
+                        <a href="about.html" class="button is-small is-light">詳細事項 →</a>
                     </div>
                 </div>
 
                 <div class="column is-5">
                     <div class="info-card">
                         <div class="icon-box">
-                            <i class="fas fa-shield-alt"></i> </div>
-                        <h3 class="title is-4">広域パトロール強化</h3>
-                        <p class="subtitle is-6">対象: 港湾部、パロミノ・ハイウェイ</p>
-                        <p>最近の犯罪傾向に基づき、深夜帯の港湾地区および都市間高速道路での巡回頻度を引き上げ、治安維持に努めます。</p>
+                            <i class="fas fa-map-marked-alt"></i> </div>
+                        <h3 class="title is-4">港湾地区治安強化対策</h3>
+                        <p class="subtitle is-6">対象エリア: Port of Los Santos 全域</p>
+                        <p>最近の貨物盗難事件の増加を受け、州警察港湾部隊は夜間のパトロール頻度を引き上げるとともに、関係機関と連携して治安維持を徹底します。</p>
                         <br>
-                        <a href="divisions.html" class="button is-small is-light">部隊について →</a>
+                        <a href="divisions.html" class="button is-small is-light">部隊情報 →</a>
                     </div>
                 </div>
 
@@ -140,8 +160,8 @@
                 <div class="column is-8">
                     <h2 class="title is-3">Slow Down, Move Over.</h2>
                     <p class="subtitle is-5">
-                        緊急車両や道路管理車両が停車している傍を通過する際は、<br>
-                        必ず速度を落とし、可能な限り車線を変更してください。
+                        緊急車両、道路管理車両が停車している傍を通過する際、<br>
+                        運転者は必ず速度を落とし、可能な限り車線を変更する義務があります。
                     </p>
                     <a href="recruit.html" class="button is-white is-outlined">州警察の法規について</a>
                 </div>
