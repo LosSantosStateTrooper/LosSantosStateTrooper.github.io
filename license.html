@@ -58,7 +58,7 @@
                         <form id="licenseForm" action="https://formspree.io/f/mzdkdknq" method="POST">
                             <div class="field">
                                 <label class="label">氏名 (Full Name)</label>
-                                <div class="control"><input class="input" type="text" name="氏名" placeholder="例: John Doe" required></div>
+                                <div class="control"><input class="input" type="text" name="氏名" placeholder="例: unti tarou" required></div>
                             </div>
 
                             <div class="field">
@@ -67,7 +67,7 @@
                                     <input class="input" type="email" id="emailMain" name="_replyto" placeholder="your@email.com" required oninput="validateAll()">
                                     <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
                                 </div>
-                                <p id="emailFormatError" class="help is-danger" style="display: none;">有効な形式（@やドメイン）で入力してください。</p>
+                                <p id="emailFormatError" class="help is-danger" style="display: none;">有効な形式で入力してください。</p>
                             </div>
 
                             <div class="field">
@@ -83,7 +83,7 @@
                                 <label class="label">申請するライセンス階級</label>
                                 <div class="control">
                                     <div class="select is-fullwidth">
-                                        <select name="階級" required>
+                                        <select name="階級" required onchange="validateAll()">
                                             <option value="">階級を選択してください</option>
                                             <option>Class A (拳銃・CCW)</option>
                                             <option>Class B (長物・猟銃)</option>
@@ -116,20 +116,28 @@
         const formArea = document.getElementById('form-area');
         const submitBtn = document.getElementById('submitBtn');
 
-        // 1. バリデーション関数（リアルタイムチェック）
+        // 【新機能】「戻る」で戻った時にページを強制リロードして最新状態にする
+        window.addEventListener('pageshow', function(event) {
+            if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+                window.location.reload();
+            }
+        });
+
+        // バリデーション（入力チェック）
         function validateAll() {
             const emailMain = document.getElementById('emailMain');
             const emailConfirm = document.getElementById('emailConfirm');
+            const rankSelect = document.querySelector('select[name="階級"]');
             const formatError = document.getElementById('emailFormatError');
             const matchError = document.getElementById('emailMatchError');
 
-            // メールの形式チェック用（正規表現）
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             
             let isFormatValid = emailPattern.test(emailMain.value);
             let isMatchValid = (emailMain.value === emailConfirm.value);
+            let isRankSelected = (rankSelect.value !== "");
 
-            // 形式エラーの表示
+            // 形式チェック表示
             if (emailMain.value !== "" && !isFormatValid) {
                 formatError.style.display = 'block';
                 emailMain.classList.add('is-danger');
@@ -138,7 +146,7 @@
                 emailMain.classList.remove('is-danger');
             }
 
-            // 一致エラーの表示
+            // 一致チェック表示
             if (emailConfirm.value !== "" && !isMatchValid) {
                 matchError.style.display = 'block';
                 emailConfirm.classList.add('is-danger');
@@ -147,15 +155,15 @@
                 emailConfirm.classList.remove('is-danger');
             }
 
-            // 両方クリアしていないとボタンを押せなくする
-            if (isFormatValid && isMatchValid && emailConfirm.value !== "") {
+            // 全てOKならボタンを有効化
+            if (isFormatValid && isMatchValid && isRankSelected && emailConfirm.value !== "") {
                 submitBtn.disabled = false;
             } else {
                 submitBtn.disabled = true;
             }
         }
 
-        // 2. 30日タイマー制限のチェック
+        // 30日タイマーチェック
         const LIMIT_DAYS = 30;
         const LIMIT_MS = LIMIT_DAYS * 24 * 60 * 60 * 1000;
         const lastSubmitTime = localStorage.getItem(FORM_KEY);
@@ -175,13 +183,13 @@
             }
         }
 
-        // 3. 送信時に時間を保存
+        // 送信時に時間を記録
         document.getElementById('licenseForm').onsubmit = function() {
             localStorage.setItem(FORM_KEY, new Date().getTime().toString());
             return true;
         };
 
-        // 初期状態でボタンをチェック（リロード対策）
+        // 初期実行
         validateAll();
     </script>
 </body>
