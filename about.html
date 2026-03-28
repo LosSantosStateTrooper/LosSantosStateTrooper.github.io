@@ -25,28 +25,37 @@
             font-weight: 700 !important;
         }
 
-        /* ナビゲーションバー（indexと完全一致） */
+        /* ナビゲーションバー（形状維持） */
         .navbar.is-dark { background-color: #1a1a1a; }
         .navbar-item { color: white !important; font-weight: 900 !important; }
 
-        /* 下層ページ用ヘッダー（少し高さを抑える） */
+        /* 下層ページ用ヘッダー（背景画像サイズ・位置調整版） */
         .hero.is-small-page {
-            background: linear-gradient(rgba(0, 20, 50, 0.8), rgba(0, 0, 0, 0.6)), 
-                        url('policeStation2.jpg'); /* ★画像を差し替え★ */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* パララックス効果 */
-            padding: 100px 0 60px 0;
+            background: linear-gradient(rgba(0, 20, 50, 0.7), rgba(0, 0, 0, 0.6)), 
+                        url('policeStation2.jpg');
+            background-size: cover; /* 画面幅に合わせて画像をフィット */
+            background-position: center 20%; /* ★画像の中央よりやや上を表示（署の建物が入りやすい）★ */
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* スクロール時に背景を固定（パララックス） */
+            padding: 90px 0 60px 0;
             color: white !important;
         }
+
         .hero.is-small-page .title { 
             color: white !important; 
             font-weight: 900 !important; 
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            margin-bottom: 0.5rem !important;
         }
 
-        /* 組織概要のコンテンツスタイル */
+        .hero.is-small-page .subtitle {
+            font-weight: 700 !important;
+            letter-spacing: 0.05rem;
+            color: #3273dc !important;
+        }
+
+        /* コンテンツエリア */
         .content-section {
             padding: 60px 0;
             background-color: white;
@@ -105,13 +114,12 @@
     <section class="hero is-small-page">
         <div class="container has-text-centered">
             <h1 class="title">組織概要</h1>
-            <p class="subtitle is-4" style="color: #3273dc !important;">About Los Santos State Trooper</p>
+            <p class="subtitle is-4">About Los Santos State Trooper</p>
         </div>
     </section>
 
     <section class="content-section">
         <div class="container">
-            
             <div class="columns is-centered">
                 <div class="column is-10">
                     
@@ -160,7 +168,6 @@
 
                 </div>
             </div>
-
         </div>
     </section>
 
