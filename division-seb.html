@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>戦術執行班 (SEB) | LSST</title>
     
+    <link rel="icon" href="icon.png" type="image/png">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&display=swap" rel="stylesheet">
@@ -75,6 +77,7 @@
             padding: 20px;
             margin-bottom: 15px;
         }
+        .operation-item h4 { font-weight: 900 !important; color: #1a1a1a; margin-bottom: 5px; }
 
         /* 特殊装備・車両 */
         .tactical-grid {
@@ -89,8 +92,11 @@
             padding: 30px;
             text-align: center;
             border-bottom: 4px solid #d32f2f;
+            transition: transform 0.2s;
         }
+        .tactical-card:hover { transform: translateY(-5px); }
         .tactical-card h4 { color: #d32f2f; font-weight: 900 !important; font-size: 1.3rem; margin-bottom: 10px; }
+        .tactical-card p { font-size: 0.95rem; line-height: 1.6; }
 
         footer { background-color: #000 !important; padding: 40px 0; }
         footer p { color: #ccc !important; }
@@ -143,17 +149,17 @@
                         <h2 class="section-title"><i class="fas fa-shield-virus"></i>特殊任務領域</h2>
                         
                         <div class="operation-item">
-                            <h4>高リスク令状の執行</h4>
+                            <h4><i class="fas fa-door-open mr-2"></i>高リスク令状の執行</h4>
                             <p>武装した容疑者の潜伏先や、抵抗が予想される拠点への強襲・逮捕作戦を遂行します。</p>
                         </div>
 
                         <div class="operation-item">
-                            <h4>対テロ作戦・人質救出</h4>
+                            <h4><i class="fas fa-user-friends mr-2"></i>対テロ作戦・人質救出</h4>
                             <p>建物へのエントリー、立てこもり事件の解決、および人質の安全確保を最優先とした特殊作戦を担います。</p>
                         </div>
 
                         <div class="operation-item">
-                            <h4>要人警護・特殊警戒</h4>
+                            <h4><i class="fas fa-eye mr-2"></i>要人警護・特殊警戒</h4>
                             <p>州政府要人の移動警護や、大規模イベントにおける狙撃ポイントの監視など、最高レベルの警戒を実施します。</p>
                         </div>
                     </div>
@@ -163,16 +169,16 @@
                         
                         <div class="tactical-grid">
                             <div class="tactical-card">
-                                <h4>RCV</h4></h4>
-                                <p>銃弾や爆発から隊員を守る重装甲車。障害物の突破や現場の遮蔽物として運用。</p>
+                                <h4><i class="fas fa-truck-monster mb-2"></i><br>RCV</h4>
+                                <p>銃弾や爆発から隊員を守る重装甲車。障害物の突破や、現場の動く遮蔽物として運用。</p>
                             </div>
                             <div class="tactical-card">
-                                <h4>ParkRanger</h4>
-                                <p>覆面として運用</p>
+                                <h4><i class="fas fa-shuttle-van mb-2"></i><br>ParkRanger</h4>
+                                <p>地形を選ばない機動力を持つ四輪駆動車。特殊隠密任務や覆面パトロールとして運用。</p>
                             </div>
                             <div class="tactical-card">
-                                <h4>Tactical Gear</h4>
-                                <p>防弾ベスト、ナイトビジョンゴーグル、および状況に応じた特殊兵装（ライフルの使用等）を選択可能。</p>
+                                <h4><i class="fas fa-vest mb-2"></i><br>Tactical Gear</h4>
+                                <p>防弾ベスト、ナイトビジョン、状況に応じたライフル等の特殊兵装を選択可能。</p>
                             </div>
                         </div>
                     </div>
