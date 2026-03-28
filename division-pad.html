@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>港湾警備部隊 (PAD) | LSST</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 700 !important;
+            background-color: #f5f5f5;
+            color: #1a1a1a;
+            letter-spacing: 0.03rem;
+        }
+
+        * {
+            font-weight: 700 !important;
+        }
+
+        /* ナビゲーションバー */
+        .navbar.is-dark { background-color: #1a1a1a; }
+        .navbar-item { color: white !important; font-weight: 900 !important; }
+
+        /* ヘッダーセクション */
+        .hero.is-small-page {
+            background: linear-gradient(rgba(0, 20, 50, 0.85), rgba(0, 0, 0, 0.7)), 
+                        url('policeStation1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 100px 0 60px 0;
+            color: white !important;
+        }
+        .hero.is-small-page .title { 
+            color: white !important; 
+            font-weight: 900 !important; 
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        /* コンテンツエリア */
+        .content-section { padding: 60px 0; }
+        
+        .info-box {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-top: 10px solid #002d62;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 900 !important;
+            color: #002d62;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title i { margin-right: 15px; }
+
+        /* 業務内容 */
+        .duty-item {
+            background-color: #f0f4f8;
+            border-left: 5px solid #002d62;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        /* 運用車両（シンプル版） */
+        .vehicle-info {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 30px;
+            border-radius: 0;
+            text-align: center;
+        }
+        .vehicle-info h4 { color: #3273dc; font-weight: 900 !important; font-size: 1.5rem; margin-bottom: 10px; }
+
+        footer { background-color: #000 !important; padding: 40px 0; }
+        footer p { color: #ccc !important; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar is-dark is-fixed-top">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="index.html">
+                    <img src="icon.png" alt="LSST ICON">
+                    <span style="color: #3273dc; margin-left: 5px;">LS</span>ST
+                </a>
+            </div>
+            <div class="navbar-menu is-active">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="about.html">組織概要</a>
+                    <a class="navbar-item" href="divisions.html">部隊紹介</a>
+                    <a class="navbar-item" href="gallery.html">ギャラリー</a>
+                    <a class="navbar-item" href="recruit.html">入隊申請</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero is-small-page">
+        <div class="container has-text-centered">
+            <h1 class="title">Port Authority Detail</h1>
+            <p class="subtitle is-4" style="color: #3273dc !important;">港湾警備部隊 (PAD)</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-10">
+                    
+                    <div class="info-box">
+                        <h2 class="section-title"><i class="fas fa-anchor"></i>港湾警備の要</h2>
+                        <div class="content is-medium">
+                            <p>
+                                港湾警備部隊（PAD）は、ロスサントス港（Port of Los Santos）およびその周辺の臨海地区における法執行を専門とする部隊です。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h2 class="section-title"><i class="fas fa-shield-alt"></i>主要任務</h2>
+                        <div class="duty-item">
+                            <h4>港湾施設の防犯・巡回</h4>
+                            <p>広大なコンテナターミナルや倉庫街を24時間体制でパトロールし、貨物盗難や不法侵入を防止します。</p>
+                        </div>
+                        <div class="duty-item">
+                            <h4>商用車両の交通管理</h4>
+                            <p>港湾地区特有の大型車両による交通混雑の緩和、および法令遵守の徹底を指導します。</p>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <h2 class="section-title"><i class="fas fa-car-side"></i>運用車両</h2>
+                        <div class="vehicle-info">
+                            <h4>港湾専用塗装車両</h4>
+                            <p>PADでは、特殊車両を除き、港湾地区での視認性を考慮した専用の港湾塗装（Port Authority Livery）が施されたパトロールカーを標準運用しています。</p>
+                        </div>
+                    </div>
+
+                    <div class="has-text-centered mt-6">
+                        <a href="divisions.html" class="button is-dark is-outlined">
+                            <i class="fas fa-arrow-left mr-2"></i> 部隊紹介一覧へ戻る
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>© 2026 Los Santos State Trooper. <br>このサイトはゲーム内ロールプレイ用の架空の組織のものです。</p>
+        </div>
+    </footer>
+
+</body>
+</html>
