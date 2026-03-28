@@ -76,20 +76,27 @@
             margin-bottom: 15px;
         }
 
-        /* 車両紹介グリッド */
-        .vehicle-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .vehicle-card {
-            background: #1a1a1a;
+        /* ★運用車両セクション（修正版：枠を1つに）★ */
+        .vehicle-info-main {
+            background-color: #1a1a1a;
             color: white;
-            padding: 20px;
+            padding: 30px;
+            border-radius: 0;
             text-align: center;
         }
-        .vehicle-card h4 { color: #3273dc; font-weight: 900 !important; margin-bottom: 5px; }
+        .vehicle-info-main h4 { color: #3273dc; font-weight: 900 !important; font-size: 1.5rem; margin-bottom: 15px; }
+        
+        .vehicle-list-text {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 15px;
+        }
+
+        .other-info {
+            color: #bdc3c7;
+            font-size: 0.95rem;
+        }
 
         footer { background-color: #000 !important; padding: 40px 0; }
         footer p { color: #ccc !important; }
@@ -140,39 +147,26 @@
 
                     <div class="info-box">
                         <h2 class="section-title"><i class="fas fa-tasks"></i>主要任務</h2>
-                        
                         <div class="mission-item">
                             <h4>交通法規の執行 (Traffic Enforcement)</h4>
                             <p>速度超過、無謀運転、飲酒運転などの取り締まりを行い、重大事故を未然に防ぎます。</p>
                         </div>
-
                         <div class="mission-item">
                             <h4>事故対応・道路啓開</h4>
                             <p>事故発生時、迅速に現場へ急行し、負傷者の救護支援、交通整理、および事故原因の調査を実施します。</p>
-                        </div>
-
-                        <div class="mission-item">
-                            <h4>商用車検察 (CMV Inspection)</h4>
-                            <p>大型トラックなどの商用車両に対し、重量超過や整備不良がないかの検査を行い、安全運行を指導します。</p>
                         </div>
                     </div>
 
                     <div class="info-box">
                         <h2 class="section-title"><i class="fas fa-car"></i>運用車両</h2>
-                        <p class="mb-4">HPDでは、高速追跡や長距離パトロールに適した高性能な車両を運用しています。</p>
-                        
-                        <div class="vehicle-grid">
-                            <div class="vehicle-card">
-                                <h4>Vapid Stanier</h4>
-                                <p>伝統的なパトロール車両。高い信頼性を誇る標準モデル。</p>
+                        <div class="vehicle-info-main">
+                            <h4>標準パトロール車両</h4>
+                            <div class="vehicle-list-text">
+                                <p>・Vapid Stanier LE Cruiser</p>
+                                <p>・Declasse Impaler SZ Cruiser</p>
                             </div>
-                            <div class="vehicle-card">
-                                <h4>Police Interceptor</h4>
-                                <p>高速追跡に特化した車両。優れた加速性能を持つ。</p>
-                            </div>
-                            <div class="vehicle-card">
-                                <h4>Police Bike</h4>
-                                <p>機動力を活かし、渋滞路や狭い道路での取り締まりに威力を発揮。</p>
+                            <div class="other-info">
+                                <p>その他、高速追跡や長距離巡回など、現場の状況に応じて最適な車両を運用します。</p>
                             </div>
                         </div>
                     </div>
