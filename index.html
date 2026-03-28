@@ -7,24 +7,24 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;900&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* ★サイト全体を太字(700)に設定★ */
+        /* 全体は標準の太さ(400) */
         body {
             font-family: 'Noto Sans JP', sans-serif;
-            font-weight: 700;
+            font-weight: 400;
             background-color: #f5f5f5;
             color: #1a1a1a;
         }
 
         .navbar.is-dark { background-color: #1a1a1a; }
-        .navbar-item { font-weight: 900 !important; color: white !important; }
+        /* ナビゲーションの文字は少し強調 */
+        .navbar-item { font-weight: 700 !important; color: white !important; }
 
-        /* ヘッダー画像セクション */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), 
                         url('top_bg.png');
@@ -34,44 +34,42 @@
             color: white !important;
         }
 
-        /* ★メインコピーを極太(900)に★ */
+        /* ★タイトルだけを極太(900)に★ */
         .hero .title { 
             color: white !important; 
             font-weight: 900; 
-            font-size: 4.5rem; /* より大きく */
+            font-size: 4.5rem;
             text-shadow: 3px 3px 6px rgba(0,0,0,0.8); 
-            letter-spacing: -0.02rem;
         }
+        /* サブタイトルは標準 */
         .hero .subtitle { 
             color: white !important; 
-            font-weight: 700;
+            font-weight: 400;
             font-size: 1.8rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.8); 
-            line-height: 1.6;
         }
 
-        /* コンテンツカード */
         .info-card {
             background: white;
             padding: 30px;
-            border-radius: 0; /* 角をあえて角張らせて硬い印象に */
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             height: 100%;
             border-top: 6px solid #002d62; 
         }
-        .info-card .title { font-weight: 900; margin-bottom: 1rem; }
+        /* カード内のタイトルも強調 */
+        .info-card .title { font-weight: 900; }
 
-        /* 青い横長バー */
         .blue-banner {
             background-color: #002d62;
             color: white;
             padding: 50px 0;
-            border-top: 2px solid #003d82;
         }
+        /* ★青バーのタイトルも極太★ */
         .blue-banner .title { color: white !important; font-weight: 900; }
-        .blue-banner .subtitle { color: white !important; font-weight: 700; opacity: 0.9; }
+        .blue-banner .subtitle { color: white !important; font-weight: 400; }
 
-        footer { font-weight: 700; }
+        /* ★ボタンの文字を太字に★ */
+        .button { font-weight: 900; }
     </style>
 </head>
 <body>
@@ -110,19 +108,19 @@
                 <div class="column is-5">
                     <div class="info-card">
                         <h3 class="title is-4">春季特別交通安全運動の実施</h3>
-                        <p class="is-size-6 has-text-grey-darker mb-4">実施期間: 2026年4月1日 〜 4月15日</p>
-                        <p>州知事の通達に基づき、州内主要幹線道路にて速度超過、飲酒運転の取締を強化します。特に港湾地区周辺の大型車両への監視を徹底します。</p>
+                        <p class="mb-4">実施期間: 2026年4月1日 〜 4月15日</p>
+                        <p>サンアンドレアス州知事の通達に基づき、州内主要幹線道路にて速度超過、飲酒運転の取締を強化します。</p>
                         <br>
-                        <a href="about.html" class="button is-dark is-fullwidth">詳細事項を確認</a>
+                        <a href="about.html" class="button is-dark is-fullwidth">詳細を確認</a>
                     </div>
                 </div>
                 <div class="column is-5">
                     <div class="info-card">
                         <h3 class="title is-4">港湾地区治安強化対策</h3>
-                        <p class="is-size-6 has-text-grey-darker mb-4">対象エリア: Port of Los Santos 全域</p>
-                        <p>貨物盗難事件の増加を受け、州警察港湾部隊は夜間のパトロール頻度を引き上げるとともに、関係機関と連携して治安維持を徹底します。</p>
+                        <p class="mb-4">対象エリア: Port of Los Santos 全域</p>
+                        <p>貨物盗難事件の増加を受け、州警察港湾部隊はパトロール頻度を引き上げ、治安維持を徹底します。</p>
                         <br>
-                        <a href="divisions.html" class="button is-dark is-fullwidth">部隊情報を確認</a>
+                        <a href="divisions.html" class="button is-dark is-fullwidth">詳細を確認</a>
                     </div>
                 </div>
             </div>
@@ -136,11 +134,11 @@
                     <h2 class="title is-2">Slow Down, Move Over.</h2>
                     <p class="subtitle is-5">
                         緊急車両等が停車している傍を通過する際、運転者は必ず速度を落とし、<br>
-                        可能な限り車線を変更する義務があります。
+                        可能な限り車線を変更する義務があります。それが人命を救います。
                     </p>
                 </div>
                 <div class="column has-text-centered">
-                    <a href="recruit.html" class="button is-white is-outlined is-large">詳しく</a>
+                    <a href="law.html" class="button is-white is-outlined is-large">詳しく確認</a>
                 </div>
             </div>
         </div>
@@ -148,7 +146,7 @@
 
     <footer class="footer has-background-black has-text-grey-light">
         <div class="content has-text-centered">
-            <p>© 2026 Los Santos State Trooper. <br>このサイトはゲーム内ロールプレイ用の架空の組織のものです。</p>
+            <p>© 2026 Los Santos State Trooper.</p>
         </div>
     </footer>
 
