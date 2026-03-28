@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>部隊紹介 | LSST</title>
     
+    <link rel="icon" href="icon.png" type="image/png">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&display=swap" rel="stylesheet">
@@ -13,7 +15,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* 全ページ共通：すべて太字(700) */
         body {
             font-family: 'Noto Sans JP', sans-serif;
             font-weight: 700 !important;
@@ -22,7 +23,6 @@
             letter-spacing: 0.03rem;
         }
 
-        /* 全ての要素に太字を適用 */
         * {
             font-weight: 700 !important;
         }
@@ -57,14 +57,15 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             margin-bottom: 30px;
             border-left: 10px solid #002d62;
-            transition: transform 0.2s;
+            transition: all 0.2s;
             display: flex;
             flex-direction: column;
-            text-decoration: none !important; /* リンクの線を消す */
+            text-decoration: none !important;
             color: inherit;
         }
         .division-card:hover {
             transform: translateX(10px);
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
             background-color: #fafafa;
         }
         .division-header {
@@ -76,7 +77,6 @@
         .division-name { font-size: 1.8rem; font-weight: 900 !important; color: #002d62; }
         .division-en { font-size: 1rem; color: #666; margin-bottom: 10px; }
 
-        /* 右下の矢印アイコン */
         .view-more {
             position: absolute;
             bottom: 20px;
@@ -86,10 +86,10 @@
         }
 
         /* 各部隊の識別タグ */
-        .tag.is-division { background-color: #002d62; color: white; font-weight: 900 !important; }
-        .tag.is-investigation { background-color: #4a4a4a; color: white; font-weight: 900 !important; }
-        .tag.is-special { background-color: #d32f2f; color: white; font-weight: 900 !important; }
-        .tag.is-tactical { background-color: #1a1a1a; color: white; font-weight: 900 !important; }
+        .tag.is-division { background-color: #002d62; color: white; }
+        .tag.is-investigation { background-color: #4a4a4a; color: white; }
+        .tag.is-special { background-color: #d32f2f; color: white; }
+        .tag.is-tactical { background-color: #1a1a1a; color: white; }
 
         footer { background-color: #000 !important; padding: 40px 0; }
         footer p { color: #ccc !important; }
@@ -136,7 +136,7 @@
                             <p class="division-en">Highway Patrol Division (HPD)</p>
                         </div>
                         <div class="division-body">
-                            <p>LSSTの運用において最も中核となる部隊です。州内の主要幹線道路における交通法規の執行、交通事故への即応、路上の安全確保を担います。</p>
+                            <p>LSSTの顔とも言える、交通法規の番人。州内全域の道路をパトロールし、安全な交通環境を維持する基幹部隊です。</p>
                             <span class="view-more">詳細を見る <i class="fas fa-arrow-right"></i></span>
                         </div>
                     </a>
@@ -146,11 +146,11 @@
                     <a href="division-cis.html" class="division-card" style="border-left-color: #4a4a4a;">
                         <div class="division-header">
                             <span class="tag is-investigation">INVESTIGATION</span>
-                            <h2 class="division-name">刑事部 / 犯罪捜査局</h2>
+                            <h2 class="division-name">犯罪捜査局</h2>
                             <p class="division-en">Criminal Investigative Services (CIS)</p>
                         </div>
                         <div class="division-body">
-                            <p>重大犯罪や組織的犯罪の捜査を担当します。現場証拠の収集から被疑者の特定まで、高度な専門知識と洞察力で事件の真相を追います。</p>
+                            <p>高度なプロファイリングと緻密な捜査で、解決困難な重大事件の真相を解明するLSSTの知性派集団です。</p>
                             <span class="view-more">詳細を見る <i class="fas fa-arrow-right"></i></span>
                         </div>
                     </a>
@@ -164,7 +164,7 @@
                             <p class="division-en">Port Authority Detail (PAD)</p>
                         </div>
                         <div class="division-body">
-                            <p>ロスサントス港周辺の治安維持を担う専門部隊です。貨物盗難の阻止、違法薬物の流入監視、大型商用車両の検問などを任務とします。</p>
+                            <p>州の物流拠点である港湾地区に特化したスペシャリスト。密輸阻止や商用車両の取り締まりを専門に行います。</p>
                             <span class="view-more">詳細を見る <i class="fas fa-arrow-right"></i></span>
                         </div>
                     </a>
@@ -178,7 +178,7 @@
                             <p class="division-en">Special Enforcement Bureau (SEB)</p>
                         </div>
                         <div class="division-body">
-                            <p>高リスクな逮捕令状の執行や、武装犯の制圧を行う精鋭部隊です。強固な精神力と高度な戦術トレーニングを受けた隊員が対応します。</p>
+                            <p>通常の警官では対応困難な武装犯の制圧や、高リスク拠点の制圧を担う、LSSTの最強の実力行使部隊です。</p>
                             <span class="view-more">詳細を見る <i class="fas fa-arrow-right"></i></span>
                         </div>
                     </a>
@@ -192,7 +192,7 @@
                             <p class="division-en">Tactical Assistance & Coordination (TAC)</p>
                         </div>
                         <div class="division-body">
-                            <p>逃走車両の強制停止（PITマニューバ）や執拗な追跡を専門とする実力行使部隊です。徹底した連携によって容疑者の逃げ道を断ちます。</p>
+                            <p>過激化するカーチェイスを終わらせる追跡のエキスパート。特殊車両を駆使し、あらゆる逃走手段を無効化します。</p>
                             <span class="view-more">詳細を見る <i class="fas fa-arrow-right"></i></span>
                         </div>
                     </a>
@@ -203,7 +203,7 @@
         </div>
     </section>
 
-    <footer class="footer has-background-black has-text-grey-light">
+    <footer class="footer">
         <div class="content has-text-centered">
             <p>© 2026 Los Santos State Trooper. <br>このサイトはゲーム内ロールプレイ用の架空の組織のものです。</p>
         </div>
