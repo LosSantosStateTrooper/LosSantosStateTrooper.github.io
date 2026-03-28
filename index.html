@@ -7,13 +7,13 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* 全体は標準の太さ(400) */
+        /* 基本の本文は標準(400) */
         body {
             font-family: 'Noto Sans JP', sans-serif;
             font-weight: 400;
@@ -22,7 +22,6 @@
         }
 
         .navbar.is-dark { background-color: #1a1a1a; }
-        /* ナビゲーションの文字は少し強調 */
         .navbar-item { font-weight: 700 !important; color: white !important; }
 
         .hero {
@@ -34,14 +33,14 @@
             color: white !important;
         }
 
-        /* ★タイトルだけを極太(900)に★ */
+        /* ★タイトルは極太(900)を維持★ */
         .hero .title { 
             color: white !important; 
             font-weight: 900; 
             font-size: 4.5rem;
             text-shadow: 3px 3px 6px rgba(0,0,0,0.8); 
         }
-        /* サブタイトルは標準 */
+        /* サブタイトルは読みやすさ重視で標準(400)に */
         .hero .subtitle { 
             color: white !important; 
             font-weight: 400;
@@ -56,8 +55,8 @@
             height: 100%;
             border-top: 6px solid #002d62; 
         }
-        /* カード内のタイトルも強調 */
-        .info-card .title { font-weight: 900; }
+        /* カードの見出しは強調(700) */
+        .info-card .title { font-weight: 700; }
 
         .blue-banner {
             background-color: #002d62;
@@ -68,8 +67,9 @@
         .blue-banner .title { color: white !important; font-weight: 900; }
         .blue-banner .subtitle { color: white !important; font-weight: 400; }
 
-        /* ★ボタンの文字を太字に★ */
-        .button { font-weight: 900; }
+        /* ★ボタンはガツンと太字(900)★ */
+        .button.is-large { font-weight: 900; }
+        .button.is-dark { font-weight: 700; }
     </style>
 </head>
 <body>
@@ -134,7 +134,7 @@
                     <h2 class="title is-2">Slow Down, Move Over.</h2>
                     <p class="subtitle is-5">
                         緊急車両等が停車している傍を通過する際、運転者は必ず速度を落とし、<br>
-                        可能な限り車線を変更する義務があります。それが人命を救います。
+                        可能な限り車線を変更する義務があります。
                     </p>
                 </div>
                 <div class="column has-text-centered">
