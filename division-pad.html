@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>港湾警備部隊 (PAD) | LSST</title>
     
+    <link rel="icon" href="icon.png" type="image/png">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&display=swap" rel="stylesheet">
@@ -71,20 +73,23 @@
         /* 業務内容 */
         .duty-item {
             background-color: #f0f4f8;
-            border-left: 5px solid #002d62;
+            border-left: 5px solid #3273dc;
             padding: 20px;
             margin-bottom: 15px;
         }
+        .duty-item h4 { font-weight: 900 !important; color: #002d62; margin-bottom: 5px; }
 
-        /* 運用車両（シンプル版） */
+        /* 運用車両 */
         .vehicle-info {
             background-color: #1a1a1a;
             color: white;
             padding: 30px;
             border-radius: 0;
             text-align: center;
+            border-bottom: 4px solid #3273dc;
         }
         .vehicle-info h4 { color: #3273dc; font-weight: 900 !important; font-size: 1.5rem; margin-bottom: 10px; }
+        .vehicle-info p { font-size: 0.95rem; line-height: 1.6; }
 
         footer { background-color: #000 !important; padding: 40px 0; }
         footer p { color: #ccc !important; }
@@ -128,27 +133,32 @@
                         <div class="content is-medium">
                             <p>
                                 港湾警備部隊（PAD）は、ロスサントス港（Port of Los Santos）およびその周辺の臨海地区における法執行を専門とする部隊です。
+                                広大な港湾インフラの安全を確保し、州の経済を支える物流の要所をあらゆる脅威から守ります。
                             </p>
                         </div>
                     </div>
 
                     <div class="info-box">
-                        <h2 class="section-title"><i class="fas fa-shield-alt"></i>主要任務</h2>
+                        <h2 class="section-title"><i class="fas fa-clipboard-check"></i>主要任務</h2>
                         <div class="duty-item">
-                            <h4>港湾施設の防犯・巡回</h4>
+                            <h4><i class="fas fa-warehouse mr-2"></i>港湾施設の防犯・巡回</h4>
                             <p>広大なコンテナターミナルや倉庫街を24時間体制でパトロールし、貨物盗難や不法侵入を防止します。</p>
                         </div>
                         <div class="duty-item">
-                            <h4>商用車両の交通管理</h4>
-                            <p>港湾地区特有の大型車両による交通混雑の緩和、および法令遵守の徹底を指導します。</p>
+                            <h4><i class="fas fa-truck mr-2"></i>商用車両の交通管理</h4>
+                            <p>港湾地区特有の大型車両による交通混雑の緩和、および重量制限や整備不良等の法令遵守を徹底します。</p>
+                        </div>
+                        <div class="duty-item">
+                            <h4><i class="fas fa-box-open mr-2"></i>密輸・違法物資の監視</h4>
+                            <p>関係機関と連携し、コンテナ等を利用した違法薬物や武器の州内流入を未然に防ぎます。</p>
                         </div>
                     </div>
 
                     <div class="info-box">
-                        <h2 class="section-title"><i class="fas fa-car-side"></i>運用車両</h2>
+                        <h2 class="section-title"><i class="fas fa-car"></i>運用車両</h2>
                         <div class="vehicle-info">
-                            <h4>港湾専用塗装車両</h4>
-                            <p>PADでは、特殊車両を除き、港湾地区での視認性を考慮した専用の港湾塗装（Port Authority Livery）が施されたパトロールカーを標準運用しています。</p>
+                            <h4><i class="fas fa-palette mr-2"></i>港湾専用塗装車両</h4>
+                            <p>PADでは、港湾地区内での視認性と識別性を高めるため、専用の<strong>港湾塗装（Port Authority Livery）</strong>を施したパトロールカーおよびSUVを標準運用しています。</p>
                         </div>
                     </div>
 
