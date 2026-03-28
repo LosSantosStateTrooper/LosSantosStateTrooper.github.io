@@ -19,6 +19,7 @@
             font-weight: 700 !important;
             background-color: #f5f5f5;
             color: #1a1a1a;
+            letter-spacing: 0.03rem;
         }
 
         /* 全ての要素に太字を適用 */
@@ -26,14 +27,14 @@
             font-weight: 700 !important;
         }
 
-        /* ナビゲーションバー（indexと完全一致） */
+        /* ナビゲーションバー */
         .navbar.is-dark { background-color: #1a1a1a; }
         .navbar-item { color: white !important; font-weight: 900 !important; }
 
         /* 下層ページ用ヘッダー */
         .hero.is-small-page {
             background: linear-gradient(rgba(0, 20, 50, 0.8), rgba(0, 0, 0, 0.6)), 
-                        url('policeStation1.jpg'); /* ★指定の画像に変更★ */
+                        url('policeStation1.jpg'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -57,18 +58,32 @@
             margin-bottom: 30px;
             border-left: 10px solid #002d62;
             transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none !important; /* リンクの線を消す */
+            color: inherit;
         }
         .division-card:hover {
             transform: translateX(10px);
+            background-color: #fafafa;
         }
         .division-header {
             padding: 20px 30px;
             background-color: #f9f9f9;
             border-bottom: 1px solid #eee;
         }
-        .division-body { padding: 30px; }
+        .division-body { padding: 30px; position: relative; }
         .division-name { font-size: 1.8rem; font-weight: 900 !important; color: #002d62; }
         .division-en { font-size: 1rem; color: #666; margin-bottom: 10px; }
+
+        /* 右下の矢印アイコン */
+        .view-more {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            color: #3273dc;
+            font-size: 0.9rem;
+        }
 
         /* 各部隊の識別タグ */
         .tag.is-division { background-color: #002d62; color: white; font-weight: 900 !important; }
@@ -114,68 +129,73 @@
             <div class="columns is-centered is-multiline">
                 
                 <div class="column is-10">
-                    <div class="division-card">
+                    <a href="division-hpd.html" class="division-card">
                         <div class="division-header">
                             <span class="tag is-division">CORE UNIT</span>
                             <h2 class="division-name">交通パトロール部隊</h2>
                             <p class="division-en">Highway Patrol Division (HPD)</p>
                         </div>
                         <div class="division-body">
-                            <p>LSSTの運用において最も中核となる部隊です。州内の主要幹線道路における交通法規の執行、交通事故への即応、路上の安全確保を担います。すべての隊員の基礎となる部門です。</p>
+                            <p>LSSTの運用において最も中核となる部隊です。州内の主要幹線道路における交通法規の執行、交通事故への即応、路上の安全確保を担います。</p>
+                            <span class="view-more">詳細を見る <i class="fas fa-arrow-right"></i></span>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="column is-10">
-                    <div class="division-card" style="border-left-color: #4a4a4a;">
+                    <a href="division-cis.html" class="division-card" style="border-left-color: #4a4a4a;">
                         <div class="division-header">
                             <span class="tag is-investigation">INVESTIGATION</span>
                             <h2 class="division-name">刑事部 / 犯罪捜査局</h2>
                             <p class="division-en">Criminal Investigative Services (CIS)</p>
                         </div>
                         <div class="division-body">
-                            <p>重大犯罪や組織的犯罪の捜査を担当します。現場証拠の収集から被疑者の特定まで、高度な専門知識と洞察力で事件の真相を追い、法の裁きを支援します。</p>
+                            <p>重大犯罪や組織的犯罪の捜査を担当します。現場証拠の収集から被疑者の特定まで、高度な専門知識と洞察力で事件の真相を追います。</p>
+                            <span class="view-more">詳細を見る <i class="fas fa-arrow-right"></i></span>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="column is-10">
-                    <div class="division-card" style="border-left-color: #3273dc;">
+                    <a href="division-pad.html" class="division-card" style="border-left-color: #3273dc;">
                         <div class="division-header">
                             <span class="tag is-division">AREA SPECIALIST</span>
                             <h2 class="division-name">港湾警備部隊</h2>
                             <p class="division-en">Port Authority Detail (PAD)</p>
                         </div>
                         <div class="division-body">
-                            <p>ロスサントス港周辺の治安維持を担う専門部隊です。物流の要所における貨物盗難の阻止、違法薬物の流入監視、大型商用車両の検問などを任務とします。</p>
+                            <p>ロスサントス港周辺の治安維持を担う専門部隊です。貨物盗難の阻止、違法薬物の流入監視、大型商用車両の検問などを任務とします。</p>
+                            <span class="view-more">詳細を見る <i class="fas fa-arrow-right"></i></span>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="column is-10">
-                    <div class="division-card" style="border-left-color: #d32f2f;">
+                    <a href="division-seb.html" class="division-card" style="border-left-color: #d32f2f;">
                         <div class="division-header">
                             <span class="tag is-special">ELITE UNIT</span>
                             <h2 class="division-name">戦術執行班</h2>
                             <p class="division-en">Special Enforcement Bureau (SEB)</p>
                         </div>
                         <div class="division-body">
-                            <p>高リスクな逮捕令状の執行や、武装犯の制圧を行う精鋭部隊です。強固な精神力と高度な戦術トレーニングを受けた隊員が、州内の重大な脅威を排除します。</p>
+                            <p>高リスクな逮捕令状の執行や、武装犯の制圧を行う精鋭部隊です。強固な精神力と高度な戦術トレーニングを受けた隊員が対応します。</p>
+                            <span class="view-more">詳細を見る <i class="fas fa-arrow-right"></i></span>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="column is-10">
-                    <div class="division-card" style="border-left-color: #1a1a1a;">
+                    <a href="division-tac.html" class="division-card" style="border-left-color: #1a1a1a;">
                         <div class="division-header">
                             <span class="tag is-tactical">TACTICAL SUPPORT</span>
                             <h2 class="division-name">機動強襲・特殊支援班</h2>
                             <p class="division-en">Tactical Assistance & Coordination (TAC)</p>
                         </div>
                         <div class="division-body">
-                            <p>逃走車両の強制停止（PITマニューバ）や、市街地・荒野を問わない執拗な追跡、現場の物理封鎖を専門とする実力行使部隊です。隊員の練度とドライビングテクニック、徹底した連携によって容疑者の逃げ道を断ちます。</p>
+                            <p>逃走車両の強制停止（PITマニューバ）や執拗な追跡を専門とする実力行使部隊です。徹底した連携によって容疑者の逃げ道を断ちます。</p>
+                            <span class="view-more">詳細を見る <i class="fas fa-arrow-right"></i></span>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
             </div>
