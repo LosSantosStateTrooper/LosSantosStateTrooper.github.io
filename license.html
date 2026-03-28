@@ -55,50 +55,32 @@
                         <form id="licenseForm" action="https://formspree.io/f/mzdkdknq" method="POST">
                             <div class="field">
                                 <label class="label">氏名 (Full Name)</label>
-                                <div class="control">
-                                    <input class="input" type="text" name="氏名" placeholder="例: John Doe" required>
-                                </div>
+                                <div class="control"><input class="input" type="text" name="氏名" placeholder="例: John Doe" required></div>
                             </div>
-
                             <div class="field">
                                 <label class="label">返信先メールアドレス (Email)</label>
-                                <div class="control">
-                                    <input class="input" type="email" name="_replyto" placeholder="your@email.com" required>
-                                </div>
+                                <div class="control"><input class="input" type="email" name="_replyto" placeholder="your@email.com" required></div>
                             </div>
-
                             <div class="field">
-                                <label class="label">申請する階級</label>
+                                <label class="label">申請するライセンス階級</label>
                                 <div class="control">
                                     <div class="select is-fullwidth">
                                         <select name="階級" required>
                                             <option value="">階級を選択してください</option>
-                                            <option>Class B (拳銃・CCW)</option>
-                                            <option>Class A (長物・猟銃)</option>
-                                            <option>Class S (両方)</option>
+                                            <option>Class A (拳銃・CCW)</option>
+                                            <option>Class B (長物・猟銃)</option>
+                                            <option>Class A & B (両方)</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
-
                             <div class="field">
                                 <label class="label">所持の目的</label>
-                                <div class="control">
-                                    <textarea class="textarea" name="目的" placeholder="自衛、狩猟、射撃競技など" required></textarea>
-                                </div>
+                                <div class="control"><textarea class="textarea" name="目的" placeholder="自衛、狩猟など" required></textarea></div>
                             </div>
-
                             <input type="hidden" name="_next" value="laws.html">
-                            <button type="submit" class="button is-warning is-fullwidth is-large mt-6">
-                                <strong>申請内容を送信する</strong>
-                            </button>
+                            <button type="submit" class="button is-warning is-fullwidth is-large mt-6"><strong>申請内容を送信する</strong></button>
                         </form>
-                    </div>
-
-                    <div class="has-text-centered">
-                        <a href="laws.html" class="has-text-grey">
-                            <i class="fas fa-arrow-left mr-2"></i> 法令ページに戻る
-                        </a>
                     </div>
                 </div>
             </div>
@@ -106,21 +88,38 @@
     </section>
 
     <script>
-        const FORM_ID = 'lsst_license_submitted';
+        const FORM_KEY = 'lsst_license_last_submit';
         const formArea = document.getElementById('form-area');
+        const lastSubmitTime = localStorage.getItem(FORM_KEY);
+        
+        // 制限期間（30日間）をミリ秒で設定
+        const LIMIT_DAYS = 30;
+        const LIMIT_MS = LIMIT_DAYS * 24 * 60 * 60 * 1000;
 
-        if (localStorage.getItem(FORM_ID)) {
-            formArea.innerHTML = `
-                <div class="notification is-danger is-light has-text-centered">
-                    <i class="fas fa-check-circle fa-2x mb-3"></i><br>
-                    <strong>申請済みです</strong><br>
-                    ご入力いただいたメールアドレス宛の返答をお待ちください。
-                </div>
-            `;
+        if (lastSubmitTime) {
+            const now = new Date().getTime();
+            const diff = now - parseInt(lastSubmitTime);
+
+            if (diff < LIMIT_MS) {
+                // まだ30日経っていない場合
+                const remainingDays = Math.ceil((LIMIT_MS - diff) / (1000 * 60 * 60 * 24));
+                formArea.innerHTML = `
+                    <div class="notification is-danger is-light has-text-centered">
+                        <i class="fas fa-clock fa-2x mb-3"></i><br>
+                        <strong>申請は30日に1回までです</strong><br>
+                        前回の申請からまだ間もないため、再申請はできません。<br>
+                        あと <strong>${remainingDays}日</strong> で再申請が可能になります。
+                    </div>
+                    <div class="has-text-centered mt-4">
+                        <a href="index.html" class="button is-outlined">トップへ戻る</a>
+                    </div>
+                `;
+            }
         }
 
+        // 送信時に現在時刻を保存
         document.getElementById('licenseForm').onsubmit = function() {
-            localStorage.setItem(FORM_ID, 'true');
+            localStorage.setItem(FORM_KEY, new Date().getTime().toString());
         };
     </script>
 </body>
