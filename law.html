@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* 全ページ共通：すべて太字(700) */
         body {
             font-family: 'Noto Sans JP', sans-serif;
             font-weight: 700 !important;
@@ -24,15 +23,11 @@
             letter-spacing: 0.03rem;
         }
 
-        * {
-            font-weight: 700 !important;
-        }
+        * { font-weight: 700 !important; }
 
-        /* ナビゲーションバー */
         .navbar.is-dark { background-color: #1a1a1a; }
         .navbar-item { color: white !important; font-weight: 900 !important; }
 
-        /* 下層ページ用ヘッダー（policeStation4.png背景） */
         .hero.is-small-page {
             background: linear-gradient(rgba(0, 20, 50, 0.8), rgba(0, 0, 0, 0.6)), 
                         url('policeStation4.png');
@@ -50,7 +45,6 @@
             letter-spacing: 0.1rem;
         }
 
-        /* コンテンツセクション */
         .content-section { padding: 60px 0; }
         
         .law-card {
@@ -58,7 +52,7 @@
             border-radius: 0;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             margin-bottom: 40px;
-            border-left: 10px solid #d32f2f; /* 警告・法律をイメージする赤 */
+            border-left: 10px solid #d32f2f;
         }
         .law-header {
             padding: 20px 30px;
@@ -68,12 +62,10 @@
         .law-body { padding: 30px; }
         .law-title { font-size: 1.8rem; font-weight: 900 !important; color: #d32f2f; }
 
-        /* 罰則テーブル */
         .table th { background-color: #f0f0f0; vertical-align: middle; }
         .fine-text { color: #d32f2f; font-weight: 900 !important; }
         .jail-text { color: #1a1a1a; font-weight: 900 !important; }
 
-        /* ミランダ警告ボックス */
         .miranda-box {
             background-color: #1a1a1a;
             color: white;
@@ -126,7 +118,6 @@
 
     <section class="content-section">
         <div class="container">
-            
             <div class="columns is-centered">
                 <div class="column is-10">
                     
@@ -148,21 +139,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>15mph未満</td>
-                                        <td class="fine-text">$250</td>
-                                        <td>警告で済む場合あり</td>
-                                    </tr>
-                                    <tr>
-                                        <td>15mph - 30mph</td>
-                                        <td class="fine-text">$550</td>
-                                        <td>-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>30mph以上</td>
-                                        <td class="fine-text">$1,200</td>
-                                        <td>無謀運転として検挙</td>
-                                    </tr>
+                                    <tr><td>15mph未満</td><td class="fine-text">$250</td><td>警告で済む場合あり</td></tr>
+                                    <tr><td>15mph - 30mph</td><td class="fine-text">$550</td><td>-</td></tr>
+                                    <tr><td>30mph以上</td><td class="fine-text">$1,200</td><td>無謀運転として検挙</td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -182,26 +161,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>飲酒・薬物運転 (DUI)</td>
-                                        <td class="fine-text">$2,500</td>
-                                        <td class="jail-text">15ヶ月</td>
-                                    </tr>
-                                    <tr>
-                                        <td>警察車両からの逃走 (Evading)</td>
-                                        <td class="fine-text">$5,000</td>
-                                        <td class="jail-text">25ヶ月</td>
-                                    </tr>
-                                    <tr>
-                                        <td>無免許・無車検運転</td>
-                                        <td class="fine-text">$1,500</td>
-                                        <td class="jail-text">-</td>
-                                    </tr>
-                                    <tr>
-                                        <td>公務執行妨害</td>
-                                        <td class="fine-text">$3,000</td>
-                                        <td class="jail-text">20ヶ月</td>
-                                    </tr>
+                                    <tr><td>飲酒・薬物運転 (DUI)</td><td class="fine-text">$2,500</td><td class="jail-text">15ヶ月</td></tr>
+                                    <tr><td>警察車両からの逃走 (Evading)</td><td class="fine-text">$5,000</td><td class="jail-text">25ヶ月</td></tr>
+                                    <tr><td>無免許・無車検運転</td><td class="fine-text">$1,500</td><td class="jail-text">-</td></tr>
+                                    <tr><td>公務執行妨害</td><td class="fine-text">$3,000</td><td class="jail-text">20ヶ月</td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -209,37 +172,34 @@
 
                     <div class="miranda-box">
                         <h3 class="title is-4 has-text-white">ミランダ警告 (Miranda Warning)</h3>
-                        <p class="is-size-6">逮捕時、Trooperは以下の権利を対象者に告知しなければなりません。</p>
-                        
                         <div class="miranda-quote">
                             1. あなたには黙秘権がある。<br>
                             2. あなたの供述は、法廷であなたに不利な証拠として用いられる場合がある。<br>
                             3. あなたは弁護士の立会いを求める権利がある。<br>
-                            4. もし自分で弁護士に依頼する経済力がなければ、質問に先立って公選弁護人を付けてもらう権利がある。<br>
-                            <hr style="background-color: #ccc; height: 1px; margin: 15px 0;">
-                            <span class="is-size-6" style="color: #555;">
-                                ※状況に応じ、「あなたはいつでもこの権利を用いることができ、質問に答えず、また供述をしないことができる。」「あなたはこの取調べをいつでも打ち切る権利がある。」との警告が付け加えられる。
-                            </span>
+                            4. もし自分で弁護士に依頼する経済力がなければ、公選弁護人を付けてもらう権利がある。
                         </div>
-                        
-                        <p class="is-size-7 has-text-grey-light">※第1項の黙秘権の告知は最も重要であり、最初になされなければならない。</p>
                     </div>
 
-                    <div class="has-text-centered mt-6">
-                        <a href="index.html" class="button is-dark is-outlined">
-                            <i class="fas fa-home mr-2"></i> トップページへ戻る
+                    <div class="mt-6">
+                        <a href="laws.html" class="button is-warning is-large is-fullwidth" style="border-radius: 0; font-weight: 900 !important; border-bottom: 4px solid #d48910;">
+                            <i class="fas fa-gavel mr-2"></i> その他法令・ライセンス規定を確認
                         </a>
+
+                        <div class="has-text-centered mt-5">
+                            <a href="index.html" class="button is-dark is-outlined">
+                                <i class="fas fa-home mr-2"></i> トップページへ戻る
+                            </a>
+                        </div>
                     </div>
 
                 </div>
             </div>
-
         </div>
     </section>
 
     <footer class="footer">
         <div class="content has-text-centered">
-            <p>© 2026 Los Santos State Trooper. <br>このサイトはゲーム内ロールプレイ用の架空の組織のものです。</p>
+            <p>© 2026 Los Santos State Trooper. <br>Roleplay Use Only.</p>
         </div>
     </footer>
 
