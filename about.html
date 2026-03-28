@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>組織概要 | LSST</title>
     
+    <link rel="icon" href="icon.png" type="image/png">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&display=swap" rel="stylesheet">
@@ -29,13 +31,13 @@
         .navbar.is-dark { background-color: #1a1a1a; }
         .navbar-item { color: white !important; font-weight: 900 !important; }
 
-        /* 下層ページ用ヘッダー（少し高さを抑える） */
+        /* 下層ページ用ヘッダー */
         .hero.is-small-page {
             background: linear-gradient(rgba(0, 20, 50, 0.8), rgba(0, 0, 0, 0.6)), 
-                        url('policeStation2.png'); /* ★画像を差し替え★ */
+                        url('policeStation2.png');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* パララックス効果 */
+            background-attachment: fixed;
             padding: 100px 0 60px 0;
             color: white !important;
         }
@@ -158,13 +160,19 @@
                         </tbody>
                     </table>
 
+                    <div class="has-text-centered mt-6">
+                        <a href="index.html" class="button is-dark is-outlined">
+                            <i class="fas fa-home mr-2"></i> トップページへ戻る
+                        </a>
+                    </div>
+
                 </div>
             </div>
 
         </div>
     </section>
 
-    <footer class="footer has-background-black has-text-grey-light">
+    <footer class="footer">
         <div class="content has-text-centered">
             <p>© 2026 Los Santos State Trooper. <br>このサイトはゲーム内ロールプレイ用の架空の組織のものです。</p>
         </div>
