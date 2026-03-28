@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>港湾地区治安強化対策 | LSST</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 700 !important;
+            background-color: #f5f5f5;
+            color: #1a1a1a;
+            letter-spacing: 0.03rem;
+        }
+
+        * {
+            font-weight: 700 !important;
+        }
+
+        /* ナビゲーションバー */
+        .navbar.is-dark { background-color: #1a1a1a; }
+        .navbar-item { color: white !important; font-weight: 900 !important; }
+
+        /* ヘッダー（背景: policeStation4.png） */
+        .hero.is-small-page {
+            background: linear-gradient(rgba(0, 20, 50, 0.8), rgba(0, 0, 0, 0.6)), 
+                        url('policeStation5.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 100px 0 60px 0;
+            color: white !important;
+        }
+        .hero.is-small-page .title { 
+            color: white !important; 
+            font-weight: 900 !important; 
+            font-size: 3.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        /* セクションスタイル */
+        .content-section { padding: 60px 0; }
+        
+        .security-box {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-top: 10px solid #002d62; /* PAD/港湾をイメージする濃紺 */
+            margin-bottom: 30px;
+        }
+
+        .security-title {
+            font-size: 2rem;
+            font-weight: 900 !important;
+            color: #002d62;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .measure-card {
+            background-color: #f0f4f8;
+            border-left: 5px solid #3273dc;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .measure-card h3 {
+            color: #002d62;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .dark-banner {
+            background-color: #001530;
+            color: white;
+            padding: 40px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        footer { background-color: #000 !important; padding: 40px 0; }
+        footer p { color: #ccc !important; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar is-dark is-fixed-top">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="index.html">
+                    <img src="icon.png" alt="LSST ICON">
+                    <span style="color: #3273dc; margin-left: 5px;">LS</span>ST
+                </a>
+            </div>
+            <div class="navbar-menu is-active">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="about.html">組織概要</a>
+                    <a class="navbar-item" href="divisions.html">部隊紹介</a>
+                    <a class="navbar-item" href="gallery.html">ギャラリー</a>
+                    <a class="navbar-item" href="recruit.html">入隊申請</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero is-small-page">
+        <div class="container has-text-centered">
+            <h1 class="title">港湾地区治安強化対策</h1>
+            <p class="subtitle is-4" style="color: #3273dc !important;">Port of Los Santos Security Initiative</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-10">
+                    
+                    <div class="security-box">
+                        <h2 class="security-title"><i class="fas fa-ship mr-3"></i>対策の背景</h2>
+                        <div class="content is-medium">
+                            <p>
+                                ロスサントス港はサンアンドレアス州の経済を支える物流の心臓部です。近年、この地区における貨物盗難、および不法物品の密輸事件が増加傾向にあります。
+                            </p>
+                            <p>
+                                これを受け、LSST港湾警備部隊（PAD）は関係機関と連携し、港湾全域における監視体制の抜本的な見直しと強化を決定いたしました。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="security-box">
+                        <h2 class="security-title"><i class="fas fa-anchor mr-3"></i>主要強化項目</h2>
+                        
+                        <div class="measure-card">
+                            <h3><i class="fas fa-truck-moving mr-2"></i>商用車両の重点検問</h3>
+                            <p>港湾地区を出入りする全ての大型トラックおよび貨物車両に対し、積載物の照合と身分証明の確認をランダムに実施します。不正な物資移動を徹底的に排除します。</p>
+                        </div>
+
+                        <div class="measure-card">
+                            <h3><i class="fas fa-video mr-2"></i>24時間広域リアルタイム監視</h3>
+                            <p>PAD本部に設置された監視センターにて、港内全域のカメラ映像を24時間体制でモニタリング。不審な動きが見られた場合は、即座にパトロール車両が現場へ急行します。</p>
+                        </div>
+
+                        <div class="measure-card">
+                            <h3><i class="fas fa-water mr-2"></i>海上・沿岸パトロールの拡充</h3>
+                            <p>陸上のみならず、PAD所属の警備艇による海上からのパトロールも強化。深夜帯における接岸施設の安全確認を徹底します。</p>
+                        </div>
+                    </div>
+
+                    <div class="dark-banner">
+                        <h2 class="title is-3 has-text-white">Protecting the Gateway of Commerce.</h2>
+                        <p class="is-size-5">物流の安全を守ることは、市民の生活を守ることです。<br>PADは24時間、止まることなく港の安全を監視し続けます。</p>
+                    </div>
+
+                    <div class="has-text-centered mt-6">
+                        <a href="divisions.html" class="button is-dark is-outlined is-large">
+                            <i class="fas fa-users mr-2"></i> 港湾部隊(PAD)の詳細を見る
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>© 2026 Los Santos State Trooper. <br>このサイトはゲーム内ロールプレイ用の架空の組織のものです。</p>
+        </div>
+    </footer>
+
+</body>
+</html>
