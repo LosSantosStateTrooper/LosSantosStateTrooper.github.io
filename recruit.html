@@ -19,72 +19,87 @@
             font-weight: 700 !important;
             background-color: #f5f5f5;
             color: #1a1a1a;
+            /* 文字の間隔を調整して読みやすく */
+            letter-spacing: 0.03rem;
         }
 
+        /* 全ての要素に太字を適用 */
         * {
             font-weight: 700 !important;
         }
 
-        /* ナビゲーションバー */
+        /* ナビゲーションバー（indexと完全一致） */
         .navbar.is-dark { background-color: #1a1a1a; }
         .navbar-item { color: white !important; font-weight: 900 !important; }
 
-        /* 下層ページ用ヘッダー */
+        /* 下層ページ用ヘッダー（policeStation1.jpg背景） */
         .hero.is-small-page {
-            background: linear-gradient(rgba(0, 20, 50, 0.7), rgba(0, 0, 0, 0.6)), 
-                        url('policeStation3.png');
+            background: linear-gradient(rgba(0, 20, 50, 0.8), rgba(0, 0, 0, 0.6)), 
+                        url('policeStation1.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            padding: 90px 0 60px 0;
+            padding: 100px 0 60px 0;
             color: white !important;
         }
         .hero.is-small-page .title { 
             color: white !important; 
             font-weight: 900 !important; 
-            font-size: 3.2rem;
+            font-size: 3.5rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-            margin-bottom: 0.5rem !important;
+            letter-spacing: 0.1rem;
         }
 
-        /* 採用コンテンツ */
+        /* 採用セクション用カードスタイル（部隊紹介と統一） */
         .content-section { padding: 60px 0; }
         
-        .recruit-step {
+        .recruit-card {
             background: white;
-            padding: 30px;
-            border-bottom: 5px solid #002d62;
+            border-radius: 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border-left: 10px solid #002d62;
+        }
+        .recruit-header {
+            padding: 20px 30px;
+            background-color: #f9f9f9;
+            border-bottom: 1px solid #eee;
+        }
+        .recruit-body { padding: 30px; }
+        .recruit-title { font-size: 1.8rem; font-weight: 900 !important; color: #002d62; }
+
+        /* 選考ステップのスタイル */
+        .step-box {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid #3273dc;
             height: 100%;
         }
-        .step-number {
-            font-size: 3rem;
+        .step-num {
+            font-size: 2.5rem;
             color: #3273dc;
             font-weight: 900 !important;
-            line-height: 1;
+            display: block;
             margin-bottom: 10px;
         }
 
-        .requirement-box {
-            background-color: #1a1a1a;
-            color: white;
-            padding: 40px;
-            border-radius: 0;
-        }
-
-        .apply-button {
-            background-color: #3273dc;
+        /* 応募ボタン */
+        .apply-btn {
+            background-color: #002d62;
             color: white !important;
+            padding: 20px 50px;
             font-size: 1.5rem;
-            padding: 30px 60px;
             font-weight: 900 !important;
-            border: none;
-            transition: 0.3s;
             display: inline-block;
-            text-decoration: none;
+            transition: 0.3s;
+            border: none;
+            margin-top: 40px;
         }
-        .apply-button:hover {
-            background-color: #2761bd;
-            transform: scale(1.05);
+        .apply-btn:hover {
+            background-color: #3273dc;
+            transform: translateY(-5px);
         }
 
         footer { background-color: #000 !important; padding: 40px 0; }
@@ -121,69 +136,74 @@
 
     <section class="content-section">
         <div class="container">
+            
             <div class="columns is-centered">
                 <div class="column is-10">
-                    <div class="requirement-box">
-                        <h2 class="title is-3 has-text-white mb-5" style="border-left: 5px solid #3273dc; padding-left: 15px;">基本応募要件</h2>
-                        <div class="content is-medium">
-                            <ul>
-                                <li><strong>誠実さと規律:</strong> 法を遵守し、組織のルールに従える方。</li>
-                                <li><strong>コミュニケーション能力:</strong> 無線連絡や一般市民への対応が円滑に行える方。</li>
-                                <li><strong>運転技術:</strong> 安全かつ迅速な車両運用ができる方（選考時に試験あり）。</li>
-                                <li><strong>活動頻度:</strong> 定期的なパトロールや訓練に参加可能な方。</li>
-                            </ul>
+                    
+                    <div class="recruit-card">
+                        <div class="recruit-header">
+                            <h2 class="recruit-title">基本応募要件</h2>
+                        </div>
+                        <div class="recruit-body">
+                            <div class="content">
+                                <p>LSSTは、州の安全を守るために高い規律と技術を持った人材を求めています。</p>
+                                <ul>
+                                    <li><strong>法規の遵守:</strong> 州法および組織内規を理解し、厳格に遵守できること。</li>
+                                    <li><strong>コミュニケーション:</strong> 無線連絡において正確かつ迅速な情報のやり取りができること。</li>
+                                    <li><strong>運転技術:</strong> 緊急車両の運用に必要な高度なドライビングスキルを有していること。</li>
+                                    <li><strong>協力体制:</strong> 他の隊員や他機関（LSPD/LSSD）と連携して任務を遂行できること。</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
+
+                    <h2 class="title is-3 has-text-centered mt-6 mb-5">選考フロー</h2>
+                    
+                    <div class="columns is-multiline">
+                        <div class="column is-3">
+                            <div class="step-box">
+                                <span class="step-num">01</span>
+                                <p>書類選考<br>(申請フォーム)</p>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="step-box">
+                                <span class="step-num">02</span>
+                                <p>面接審査<br>(RP適性確認)</p>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="step-box">
+                                <span class="step-num">03</span>
+                                <p>実技試験<br>(運転・対応力)</p>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="step-box">
+                                <span class="step-num">04</span>
+                                <p>アカデミー入校<br>(基礎訓練)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="notification is-light mt-6" style="border-left: 10px solid #1a1a1a;">
+                        <p>※ 全ての合格者は最初に <strong>HPD (交通パトロール部隊)</strong> に配属されます。専門部隊（SEB/TAC等）への配属は、一定期間の勤務実績と選抜試験への合格が必要です。</p>
+                    </div>
+
+                    <div class="has-text-centered">
+                        <a href="#" class="apply-btn">
+                            <i class="fab fa-discord mr-2"></i> 公式Discordから応募する
+                        </a>
+                        <p class="mt-4 is-size-6 has-text-grey">※ 応募前にDiscordサーバー内の募集要項を必ず確認してください。</p>
+                    </div>
+
                 </div>
             </div>
 
-            <h2 class="title is-2 has-text-centered mt-6 mb-6">選考フロー</h2>
-            <div class="columns">
-                <div class="column">
-                    <div class="recruit-step">
-                        <div class="step-number">01</div>
-                        <h3 class="title is-4">書類審査</h3>
-                        <p>応募フォームより申請。過去の経歴や志望動機を確認します。</p>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="recruit-step">
-                        <div class="step-number">02</div>
-                        <h3 class="title is-4">面接・適性検査</h3>
-                        <p>担当官による面接を行い、RPの理解度や常識力を確認します。</p>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="recruit-step">
-                        <div class="step-number">03</div>
-                        <h3 class="title is-4">実技試験</h3>
-                        <p>運転技術および緊急時対応のシミュレーションを実施します。</p>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="recruit-step">
-                        <div class="step-number">04</div>
-                        <h3 class="title is-4">アカデミー入校</h3>
-                        <p>正式配属前に基礎訓練を受け、 Trooperとしての基礎を学びます。</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="notification is-light mt-6" style="border-left: 10px solid #1a1a1a;">
-                <h3 class="title is-4">各部隊への配属について</h3>
-                <p>入隊後はまず <strong>HPD（交通パトロール部隊）</strong> にて実績を積んでいただきます。<strong>CIS, PAD, SEB, TAC</strong> などの専門・精鋭部隊への転属は、一定の階級および選抜試験の合格が必要となります。</p>
-            </div>
-
-            <div class="has-text-centered mt-6">
-                <p class="mb-4">すべての準備が整いましたか？</p>
-                <a href="https://discord.gg/yourlink" class="apply-button">
-                    <i class="fab fa-discord"></i> 公式Discordより申請する
-                </a>
-            </div>
         </div>
     </section>
 
-    <footer class="footer has-background-black has-text-grey-light">
+    <footer class="footer">
         <div class="content has-text-centered">
             <p>© 2026 Los Santos State Trooper. <br>このサイトはゲーム内ロールプレイ用の架空の組織のものです。</p>
         </div>
