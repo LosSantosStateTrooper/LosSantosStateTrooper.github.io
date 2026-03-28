@@ -3,45 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>銃器所持許可申請 | LSST</title>
+    <title>入隊申請 | LSST</title>
     <link rel="icon" href="icon.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body { font-family: 'Noto Sans JP', sans-serif; font-weight: 700 !important; background-color: #f5f5f5; }
-        * { font-weight: 700 !important; }
-        .navbar.is-dark { background-color: #1a1a1a; }
-        .hero.is-license {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('policeStation4.png');
-            background-size: cover; background-position: center; padding: 80px 0 40px 0; color: white;
+        .hero.is-recruit {
+            background: linear-gradient(rgba(0, 20, 50, 0.8), rgba(0, 0, 0, 0.8)), url('policeStation4.png');
+            background-size: cover; padding: 100px 0 60px 0; color: white;
         }
-        .form-container { background: white; padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-top: -30px; margin-bottom: 60px; border-top: 5px solid #f39c12; }
-        .label { color: #4a4a4a; font-size: 0.9rem; margin-top: 15px; }
-        .input, .textarea, .select select { border-radius: 0; border: 2px solid #eee; }
-        .input:focus { border-color: #f39c12; box-shadow: none; }
-        footer { background-color: #000 !important; padding: 40px 0; }
+        .form-container { background: white; padding: 40px; margin-top: -40px; border-top: 10px solid #3273dc; }
+        .label { color: #3273dc; }
     </style>
 </head>
 <body>
-
     <nav class="navbar is-dark is-fixed-top">
         <div class="container">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="index.html">
-                    <img src="icon.png" alt="LSST">
-                    <span style="color: #3273dc; margin-left: 5px;">LS</span>ST 公式
-                </a>
-            </div>
+            <div class="navbar-brand"><a class="navbar-item" href="index.html">LSST 公式</a></div>
         </div>
     </nav>
 
-    <section class="hero is-license has-text-centered">
+    <section class="hero is-recruit has-text-centered">
         <div class="container">
-            <h1 class="title is-2 has-text-white">Firearms License Application</h1>
-            <p class="subtitle is-5 has-text-warning">銃器所持許可証 交付申請</p>
+            <h1 class="title is-1 has-text-white">RECRUITMENT</h1>
+            <p class="subtitle is-4 has-text-info">入隊申請フォーム</p>
         </div>
     </section>
 
@@ -49,63 +35,50 @@
         <div class="container">
             <div class="columns is-centered">
                 <div class="column is-8">
-                    <div class="form-container">
-                        <div class="notification is-info is-light">
-                            申請後、Trooperによる犯罪歴の照会および面接が行われる場合があります。虚偽の申請は即座に却下されます。
-                        </div>
-
-                        <form>
+                    <div id="recruit-area" class="form-container">
+                        <form id="recruitForm" action="https://formspree.io/f/mzdkdknq" method="POST">
                             <div class="field">
-                                <label class="label">氏名 (Full Name)</label>
-                                <div class="control"><input class="input" type="text" placeholder="例: John Doe" required></div>
+                                <label class="label">氏名</label>
+                                <div class="control"><input class="input" type="text" name="氏名" required></div>
                             </div>
-
                             <div class="field">
-                                <label class="label">電話番号 (Phone Number)</label>
-                                <div class="control"><input class="input" type="text" placeholder="例: 555-0123" required></div>
+                                <label class="label">Discord ID</label>
+                                <div class="control"><input class="input" type="text" name="DiscordID" required></div>
                             </div>
-
                             <div class="field">
-                                <label class="label">申請するライセンス級</label>
-                                <div class="control">
-                                    <div class="select is-fullwidth">
-                                        <select>
-                                            <option>Class A (拳銃・CCW)</option>
-                                            <option>Class B (長物・猟銃)</option>
-                                            <option>両方</option>
-                                        </select>
-                                    </div>
-                                </div>
+                                <label class="label">メールアドレス</label>
+                                <div class="control"><input class="input" type="email" name="_replyto" required></div>
                             </div>
-
                             <div class="field">
-                                <label class="label">所持の目的</label>
-                                <div class="control">
-                                    <textarea class="textarea" placeholder="自衛のため、狩猟のため、等"></textarea>
-                                </div>
+                                <label class="label">志望動機</label>
+                                <div class="control"><textarea class="textarea" name="志望動機" rows="5" required></textarea></div>
                             </div>
-
-                            <div class="field mt-6">
-                                <button type="button" class="button is-warning is-fullwidth is-large" onclick="alert('デモ：申請データが送信されました。')">
-                                    <strong>申請内容を送信する</strong>
-                                </button>
-                            </div>
+                            <input type="hidden" name="_next" value="index.html">
+                            <button type="submit" class="button is-link is-fullwidth is-large mt-6"><strong>入隊を申請する</strong></button>
                         </form>
-                    </div>
-
-                    <div class="has-text-centered">
-                        <a href="laws.html" class="has-text-grey">
-                            <i class="fas fa-arrow-left mr-2"></i> 法令・規定ページに戻る
-                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer has-text-centered">
-        <p>© 2026 Los Santos State Trooper. <br>Roleplay Use Only.</p>
-    </footer>
+    <script>
+        const RECRUIT_ID = 'lsst_recruit_submitted';
+        const recruitArea = document.getElementById('recruit-area');
 
+        if (localStorage.getItem(RECRUIT_ID)) {
+            recruitArea.innerHTML = `
+                <div class="notification is-danger is-light has-text-centered">
+                    <i class="fas fa-user-shield fa-2x mb-3"></i><br>
+                    <strong>入隊申請はすでに受領しています。</strong><br>
+                    二重申請は不要です。E-mailでの連絡をお待ちください。
+                </div>
+            `;
+        }
+
+        document.getElementById('recruitForm').onsubmit = function() {
+            localStorage.setItem(RECRUIT_ID, 'true');
+        };
+    </script>
 </body>
 </html>
