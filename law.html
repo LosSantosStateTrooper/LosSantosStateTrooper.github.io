@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>交通法典・罰則規定 | LSST</title>
-　　<link rel="icon" href="icon.png" type="image/png">
+    
+    <link rel="icon" href="icon.png" type="image/png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,6 +72,25 @@
         .table th { background-color: #f0f0f0; vertical-align: middle; }
         .fine-text { color: #d32f2f; font-weight: 900 !important; }
         .jail-text { color: #1a1a1a; font-weight: 900 !important; }
+
+        /* ミランダ警告ボックス */
+        .miranda-box {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 40px;
+            border-radius: 0;
+            border-left: 10px solid #3273dc;
+        }
+        .miranda-quote {
+            background: #f0f0f0;
+            color: #1a1a1a;
+            padding: 25px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            border-left: 5px solid #3273dc;
+        }
 
         footer { background-color: #000 !important; padding: 40px 0; }
         footer p { color: #ccc !important; }
@@ -187,12 +207,28 @@
                         </div>
                     </div>
 
-                    <div class="box has-background-dark has-text-white p-6">
+                    <div class="miranda-box">
                         <h3 class="title is-4 has-text-white">ミランダ警告 (Miranda Warning)</h3>
-                        <p class="is-size-6 mb-4">逮捕時、Trooperは以下の権利を対象者に告知しなければなりません。</p>
-                        <blockquote class="has-text-dark" style="background: #eee; padding: 20px; border-radius: 5px;">
-                            「あなたには黙秘権がある。あなたの供述は、法廷であなたに不利な証拠として用いられる可能性がある。あなたには弁護士の立会いを求める権利がある。もし弁護士を雇う資力がなければ、公選弁護人が選任される。理解したか？」
-                        </blockquote>
+                        <p class="is-size-6">逮捕時、Trooperは以下の権利を対象者に告知しなければなりません。</p>
+                        
+                        <div class="miranda-quote">
+                            1. あなたには黙秘権がある。<br>
+                            2. あなたの供述は、法廷であなたに不利な証拠として用いられる場合がある。<br>
+                            3. あなたは弁護士の立会いを求める権利がある。<br>
+                            4. もし自分で弁護士に依頼する経済力がなければ、質問に先立って公選弁護人を付けてもらう権利がある。<br>
+                            <hr style="background-color: #ccc; height: 1px; margin: 15px 0;">
+                            <span class="is-size-6" style="color: #555;">
+                                ※状況に応じ、「あなたはいつでもこの権利を用いることができ、質問に答えず、また供述をしないことができる。」「あなたはこの取調べをいつでも打ち切る権利がある。」との警告が付け加えられる。
+                            </span>
+                        </div>
+                        
+                        <p class="is-size-7 has-text-grey-light">※第1項の黙秘権の告知は最も重要であり、最初になされなければならない。</p>
+                    </div>
+
+                    <div class="has-text-centered mt-6">
+                        <a href="index.html" class="button is-dark is-outlined">
+                            <i class="fas fa-home mr-2"></i> トップページへ戻る
+                        </a>
                     </div>
 
                 </div>
