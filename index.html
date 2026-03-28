@@ -7,22 +7,27 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* 全体は標準(400) */
+        /* ★ページ全体のテキストを太字(700)に強制指定★ */
         body {
             font-family: 'Noto Sans JP', sans-serif;
-            font-weight: 400;
+            font-weight: 700 !important;
             background-color: #f5f5f5;
             color: #1a1a1a;
         }
 
+        /* 全ての要素で太字を継承させる */
+        * {
+            font-weight: 700 !important;
+        }
+
         .navbar.is-dark { background-color: #1a1a1a; }
-        .navbar-item { font-weight: 700 !important; color: white !important; }
+        .navbar-item { color: white !important; font-weight: 900 !important; }
 
         /* ヘッダー画像セクション */
         .hero {
@@ -34,17 +39,16 @@
             color: white !important;
         }
 
-        /* ★メインタイトルを極太(900)に★ */
+        /* ★メインタイトルはさらに太い900★ */
         .hero .title { 
             color: white !important; 
-            font-weight: 900; 
+            font-weight: 900 !important; 
             font-size: 4.5rem;
             text-shadow: 3px 3px 6px rgba(0,0,0,0.8); 
             letter-spacing: -0.02rem;
         }
         .hero .subtitle { 
             color: white !important; 
-            font-weight: 400;
             font-size: 1.8rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.8); 
             line-height: 1.6;
@@ -59,7 +63,7 @@
             height: 100%;
             border-top: 6px solid #002d62; 
         }
-        .info-card .title { font-weight: 700; margin-bottom: 1rem; }
+        .info-card .title { font-weight: 900 !important; margin-bottom: 1rem; }
 
         /* 青い横長バー */
         .blue-banner {
@@ -68,14 +72,15 @@
             padding: 50px 0;
             border-top: 2px solid #003d82;
         }
-        /* ★バーのタイトルも極太(900)★ */
-        .blue-banner .title { color: white !important; font-weight: 900; }
-        .blue-banner .subtitle { color: white !important; font-weight: 400; opacity: 0.9; }
+        /* ★バーのタイトルも900★ */
+        .blue-banner .title { color: white !important; font-weight: 900 !important; }
+        .blue-banner .subtitle { color: white !important; opacity: 1; }
 
-        /* ★詳しく確認ボタンを太字(900)★ */
-        .button.is-large { font-weight: 900; }
+        /* ★ボタンも極太★ */
+        .button { font-weight: 900 !important; }
 
-        footer { font-weight: 700; }
+        footer { background-color: #000 !important; }
+        footer p { color: #ccc !important; }
     </style>
 </head>
 <body>
@@ -114,7 +119,7 @@
                 <div class="column is-5">
                     <div class="info-card">
                         <h3 class="title is-4">春季特別交通安全運動の実施</h3>
-                        <p class="is-size-6 has-text-grey-darker mb-4">実施期間: 2026年4月1日 〜 4月15日</p>
+                        <p class="mb-4">実施期間: 2026年4月1日 〜 4月15日</p>
                         <p>サンアンドレアス州知事の通達に基づき、州内主要幹線道路にて速度超過、飲酒運転の取締を強化します。特に港湾地区周辺の大型車両への監視を徹底します。</p>
                         <br>
                         <a href="about.html" class="button is-dark is-fullwidth">詳細事項を確認</a>
@@ -123,7 +128,7 @@
                 <div class="column is-5">
                     <div class="info-card">
                         <h3 class="title is-4">港湾地区治安強化対策</h3>
-                        <p class="is-size-6 has-text-grey-darker mb-4">対象エリア: Port of Los Santos 全域</p>
+                        <p class="mb-4">対象エリア: Port of Los Santos 全域</p>
                         <p>貨物盗難事件の増加を受け、州警察港湾部隊は夜間のパトロール頻度を引き上げるとともに、関係機関と連携して治安維持を徹底します。</p>
                         <br>
                         <a href="divisions.html" class="button is-dark is-fullwidth">部隊情報を確認</a>
@@ -140,7 +145,7 @@
                     <h2 class="title is-2">Slow Down, Move Over.</h2>
                     <p class="subtitle is-5">
                         緊急車両等が停車している傍を通過する際、運転者は必ず速度を落とし、<br>
-                        可能な限り車線を変更する義務があります。
+                        可能な限り車線を変更する義務があります。それが人命を救います。
                     </p>
                 </div>
                 <div class="column has-text-centered">
