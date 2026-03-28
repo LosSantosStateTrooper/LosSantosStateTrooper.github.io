@@ -21,6 +21,8 @@
         .form-container { background: white; padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-top: -30px; margin-bottom: 60px; border-top: 5px solid #f39c12; }
         .label { color: #4a4a4a; font-size: 0.9rem; margin-top: 15px; }
         .input, .textarea, .select select { border-radius: 0; border: 2px solid #eee; }
+        .input.is-danger { border-color: #ff3860; }
+        .help.is-danger { font-size: 0.8rem; margin-top: 5px; font-weight: 900 !important; }
         footer { background-color: #000 !important; padding: 40px 0; }
     </style>
 </head>
@@ -49,7 +51,8 @@
                 <div class="column is-8">
                     <div id="form-area" class="form-container">
                         <div class="notification is-info is-light">
-                            審査結果は、入力されたメールアドレス宛に送信されます。
+                            審査結果は、入力されたメールアドレス宛に送信されます。<br>
+                            <strong>アドレスに誤りがあると連絡が取れませんのでご注意ください。</strong>
                         </div>
 
                         <form id="licenseForm" action="https://formspree.io/f/mzdkdknq" method="POST">
@@ -57,10 +60,25 @@
                                 <label class="label">氏名 (Full Name)</label>
                                 <div class="control"><input class="input" type="text" name="氏名" placeholder="例: John Doe" required></div>
                             </div>
+
                             <div class="field">
                                 <label class="label">返信先メールアドレス (Email)</label>
-                                <div class="control"><input class="input" type="email" name="_replyto" placeholder="your@email.com" required></div>
+                                <div class="control has-icons-left">
+                                    <input class="input" type="email" id="emailMain" name="_replyto" placeholder="your@email.com" required oninput="validateAll()">
+                                    <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
+                                </div>
+                                <p id="emailFormatError" class="help is-danger" style="display: none;">有効な形式（@やドメイン）で入力してください。</p>
                             </div>
+
+                            <div class="field">
+                                <label class="label">メールアドレスの確認 (Confirm Email)</label>
+                                <div class="control has-icons-left">
+                                    <input class="input" type="email" id="emailConfirm" placeholder="もう一度入力してください" required oninput="validateAll()">
+                                    <span class="icon is-small is-left"><i class="fas fa-check-double"></i></span>
+                                </div>
+                                <p id="emailMatchError" class="help is-danger" style="display: none;">メールアドレスが一致しません。</p>
+                            </div>
+
                             <div class="field">
                                 <label class="label">申請するライセンス階級</label>
                                 <div class="control">
@@ -74,12 +92,18 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="field">
                                 <label class="label">所持の目的</label>
-                                <div class="control"><textarea class="textarea" name="目的" placeholder="自衛、狩猟など" required></textarea></div>
+                                <div class="control">
+                                    <textarea class="textarea" name="目的" placeholder="自衛、狩猟、射撃競技など" required></textarea>
+                                </div>
                             </div>
-                            <input type="hidden" name="_next" value="laws.html">
-                            <button type="submit" class="button is-warning is-fullwidth is-large mt-6"><strong>申請内容を送信する</strong></button>
+
+                            <input type="hidden" name="_next" value="index.html">
+                            <button type="submit" id="submitBtn" class="button is-warning is-fullwidth is-large mt-6">
+                                <strong>申請内容を送信する</strong>
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -90,37 +114,75 @@
     <script>
         const FORM_KEY = 'lsst_license_last_submit';
         const formArea = document.getElementById('form-area');
-        const lastSubmitTime = localStorage.getItem(FORM_KEY);
-        
-        // 制限期間（30日間）をミリ秒で設定
+        const submitBtn = document.getElementById('submitBtn');
+
+        // 1. バリデーション関数（リアルタイムチェック）
+        function validateAll() {
+            const emailMain = document.getElementById('emailMain');
+            const emailConfirm = document.getElementById('emailConfirm');
+            const formatError = document.getElementById('emailFormatError');
+            const matchError = document.getElementById('emailMatchError');
+
+            // メールの形式チェック用（正規表現）
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            let isFormatValid = emailPattern.test(emailMain.value);
+            let isMatchValid = (emailMain.value === emailConfirm.value);
+
+            // 形式エラーの表示
+            if (emailMain.value !== "" && !isFormatValid) {
+                formatError.style.display = 'block';
+                emailMain.classList.add('is-danger');
+            } else {
+                formatError.style.display = 'none';
+                emailMain.classList.remove('is-danger');
+            }
+
+            // 一致エラーの表示
+            if (emailConfirm.value !== "" && !isMatchValid) {
+                matchError.style.display = 'block';
+                emailConfirm.classList.add('is-danger');
+            } else {
+                matchError.style.display = 'none';
+                emailConfirm.classList.remove('is-danger');
+            }
+
+            // 両方クリアしていないとボタンを押せなくする
+            if (isFormatValid && isMatchValid && emailConfirm.value !== "") {
+                submitBtn.disabled = false;
+            } else {
+                submitBtn.disabled = true;
+            }
+        }
+
+        // 2. 30日タイマー制限のチェック
         const LIMIT_DAYS = 30;
         const LIMIT_MS = LIMIT_DAYS * 24 * 60 * 60 * 1000;
+        const lastSubmitTime = localStorage.getItem(FORM_KEY);
 
         if (lastSubmitTime) {
             const now = new Date().getTime();
             const diff = now - parseInt(lastSubmitTime);
-
             if (diff < LIMIT_MS) {
-                // まだ30日経っていない場合
                 const remainingDays = Math.ceil((LIMIT_MS - diff) / (1000 * 60 * 60 * 24));
                 formArea.innerHTML = `
                     <div class="notification is-danger is-light has-text-centered">
                         <i class="fas fa-clock fa-2x mb-3"></i><br>
                         <strong>申請は30日に1回までです</strong><br>
-                        前回の申請からまだ間もないため、再申請はできません。<br>
-                        あと <strong>${remainingDays}日</strong> で再申請が可能になります。
-                    </div>
-                    <div class="has-text-centered mt-4">
-                        <a href="index.html" class="button is-outlined">トップへ戻る</a>
+                        再申請まであと <strong>${remainingDays}日</strong> お待ちください。
                     </div>
                 `;
             }
         }
 
-        // 送信時に現在時刻を保存
+        // 3. 送信時に時間を保存
         document.getElementById('licenseForm').onsubmit = function() {
             localStorage.setItem(FORM_KEY, new Date().getTime().toString());
+            return true;
         };
+
+        // 初期状態でボタンをチェック（リロード対策）
+        validateAll();
     </script>
 </body>
 </html>
