@@ -6,25 +6,23 @@
     <title>LSST | ロスサントス州警察</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <style>
-        html { scroll-behavior: smooth; } /* スムーズスクロール（一応残します） */
         .hero {
-            /* ここにパトカーのスクショ画像を背景に設定してください */
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), 
-                        url('https://via.placeholder.com/1920x1080?text=LSST+Patrol+Car+Photo');
+            /* ★背景画像を新しいファイル名（top_bg.png）に設定★ */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), 
+                        url('top_bg.png');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed; /* スクロール時に背景を固定 */
             color: white !important;
         }
-        .hero .title { color: white !important; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        .hero .subtitle { color: #f0f0f0 !important; }
-        .section-title { border-left: 5px solid #0056b3; padding-left: 15px; margin-bottom: 20px; font-weight: bold; }
+        .hero .title { color: white !important; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); }
+        .hero .subtitle { color: #f0f0f0 !important; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); }
         .navbar.is-dark { background-color: #1a1a1a; }
         .navbar-item { font-weight: bold; }
         /* アイコン画像のスタイル調整 */
         .navbar-brand .navbar-item img {
-            max-height: 40px; /* アイコンの高さを制限 */
-            margin-right: 10px; /* 文字との間隔 */
-            border-radius: 5px; /* 少し角を丸くする（好みで） */
+            max-height: 40px;
+            margin-right: 10px;
         }
     </style>
 </head>
@@ -34,7 +32,7 @@
         <div class="container">
             <div class="navbar-brand">
                 <a class="navbar-item" href="index.html">
-                    <img src="icon.jpg" alt="LSST ICON">
+                    <img src="icon.PNG" alt="LSST ICON">
                     <span style="color: #3273dc;">LS</span>ST 公式ポータル
                 </a>
             </div>
@@ -54,9 +52,9 @@
         <div class="hero-body">
             <div class="container has-text-centered">
                 <h1 class="title is-1">Los Santos State Trooper</h1>
-                <p class="subtitle is-3">港から田舎まで、ロスサントス全域をカバーする精鋭部隊</p>
+                <p class="subtitle is-3">港湾地区から北部の未編入地域まで、<br>ロスサントス全域をカバーする精鋭部隊</p>
                 <br>
-                <a href="about.html" class="button is-link is-large is-rounded">組織について詳しく知る</a>
+                <a href="divisions.html" class="button is-link is-large is-rounded">部隊・装備を見る</a>
             </div>
         </div>
     </section>
