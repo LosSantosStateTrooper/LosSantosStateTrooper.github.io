@@ -49,34 +49,33 @@
                 <div class="column is-8">
                     <div id="form-area" class="form-container">
                         <div class="notification is-info is-light">
-                            審査結果および面接の案内は、入力されたメールアドレス宛に送信されます。
+                            審査結果は、入力されたメールアドレス宛に送信されます。
                         </div>
 
                         <form id="licenseForm" action="https://formspree.io/f/mzdkdknq" method="POST">
                             <div class="field">
                                 <label class="label">氏名 (Full Name)</label>
-                                <div class="control"><input class="input" type="text" name="氏名" placeholder="例: John Doe" required></div>
+                                <div class="control">
+                                    <input class="input" type="text" name="氏名" placeholder="例: John Doe" required>
+                                </div>
                             </div>
 
                             <div class="field">
                                 <label class="label">返信先メールアドレス (Email)</label>
-                                <div class="control"><input class="input" type="email" name="_replyto" placeholder="your@email.com" required></div>
+                                <div class="control">
+                                    <input class="input" type="email" name="_replyto" placeholder="your@email.com" required>
+                                </div>
                             </div>
 
                             <div class="field">
-                                <label class="label">電話番号 (Phone Number)</label>
-                                <div class="control"><input class="input" type="text" name="電話番号" placeholder="555-xxxx" required></div>
-                            </div>
-
-                            <div class="field">
-                                <label class="label">申請するライセンス級</label>
+                                <label class="label">申請する階級</label>
                                 <div class="control">
                                     <div class="select is-fullwidth">
-                                        <select name="種別" required>
-                                            <option value="">選択してください</option>
+                                        <select name="階級" required>
+                                            <option value="">階級を選択してください</option>
                                             <option>Class A (拳銃・CCW)</option>
                                             <option>Class B (長物・猟銃)</option>
-                                            <option>両方</option>
+                                            <option>Class A & B (両方)</option>
                                         </select>
                                     </div>
                                 </div>
@@ -85,12 +84,14 @@
                             <div class="field">
                                 <label class="label">所持の目的</label>
                                 <div class="control">
-                                    <textarea class="textarea" name="目的" placeholder="自衛、狩猟など" required></textarea>
+                                    <textarea class="textarea" name="目的" placeholder="自衛、狩猟、射撃競技など" required></textarea>
                                 </div>
                             </div>
 
                             <input type="hidden" name="_next" value="laws.html">
-                            <button type="submit" class="button is-warning is-fullwidth is-large mt-6"><strong>申請内容を送信する</strong></button>
+                            <button type="submit" class="button is-warning is-fullwidth is-large mt-6">
+                                <strong>申請内容を送信する</strong>
+                            </button>
                         </form>
                     </div>
 
@@ -108,19 +109,16 @@
         const FORM_ID = 'lsst_license_submitted';
         const formArea = document.getElementById('form-area');
 
-        // 1人1回制限のチェック
         if (localStorage.getItem(FORM_ID)) {
             formArea.innerHTML = `
                 <div class="notification is-danger is-light has-text-centered">
                     <i class="fas fa-check-circle fa-2x mb-3"></i><br>
-                    <strong>ライセンス申請はすでに送信済みです。</strong><br>
-                    登録されたメールアドレスへの返信をお待ちください。<br>
-                    （1人1回までの制限がかかっています）
+                    <strong>申請済みです</strong><br>
+                    ご入力いただいたメールアドレス宛の返答をお待ちください。
                 </div>
             `;
         }
 
-        // 送信時にブラウザへ記録
         document.getElementById('licenseForm').onsubmit = function() {
             localStorage.setItem(FORM_ID, 'true');
         };
