@@ -13,20 +13,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* 基本の本文は標準(400) */
+        /* 全体は標準(400) */
         body {
             font-family: 'Noto Sans JP', sans-serif;
             font-weight: 400;
             background-color: #f5f5f5;
-            color: #1a1a1a;
         }
 
+        /* Bulmaの初期スタイルを一部上書き */
         .navbar.is-dark { background-color: #1a1a1a; }
-        .navbar-item { font-weight: 700 !important; color: white !important; }
+        .navbar-item, .navbar-link { color: white !important; font-weight: 700; }
+        .navbar-item:hover { background-color: #333 !important; color: #3273dc !important; }
 
+        /* ヘッダー画像セクション */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), 
-                        url('top_bg.png');
+                        url('top_bg.png'); /* 港の画像 */
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -40,7 +42,7 @@
             font-size: 4.5rem;
             text-shadow: 3px 3px 6px rgba(0,0,0,0.8); 
         }
-        /* サブタイトルは読みやすさ重視で標準(400)に */
+        /* 説明文（サブタイトル）は標準 */
         .hero .subtitle { 
             color: white !important; 
             font-weight: 400;
@@ -48,41 +50,67 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.8); 
         }
 
+        /* アイコン画像のスタイル調整 */
+        .navbar-brand .navbar-item img {
+            max-height: 40px;
+            margin-right: 10px;
+        }
+
+        /* スクロール後のコンテンツセクション */
+        .info-cards { background-color: #f5f5f5; padding: 60px 0; }
         .info-card {
             background: white;
             padding: 30px;
+            border-radius: 4px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
             height: 100%;
             border-top: 6px solid #002d62; 
         }
-        /* カードの見出しは強調(700) */
         .info-card .title { font-weight: 700; }
+        .info-card .icon-box {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+        .info-card:hover .icon-box { color: #002d62; }
 
+        /* 青い横長バー */
         .blue-banner {
-            background-color: #002d62;
+            background-color: #002d62; /* 濃い青 */
             color: white;
             padding: 50px 0;
+            position: relative;
         }
         /* ★青バーのタイトルも極太★ */
         .blue-banner .title { color: white !important; font-weight: 900; }
-        .blue-banner .subtitle { color: white !important; font-weight: 400; }
-
-        /* ★ボタンはガツンと太字(900)★ */
+        .blue-banner .subtitle { color: #d0d0d0 !important; font-weight: 400; }
+        
+        /* ★詳しく確認ボタンは極太(900)★ */
         .button.is-large { font-weight: 900; }
-        .button.is-dark { font-weight: 700; }
+
+        .blue-banner .car-icon-bg {
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 8rem;
+            color: rgba(255,255,255,0.05); 
+        }
     </style>
 </head>
 <body>
 
-    <nav class="navbar is-dark is-fixed-top">
+    <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand">
                 <a class="navbar-item" href="index.html">
                     <img src="icon.png" alt="LSST ICON">
-                    <span style="color: #3273dc; margin-left: 5px;">LS</span>ST 公式ポータル
+                    <span style="color: #3273dc;">LS</span>ST 公式ポータル
                 </a>
             </div>
-            <div class="navbar-menu is-active">
+            
+            <div id="navbarMenu" class="navbar-menu is-active">
                 <div class="navbar-end">
                     <a class="navbar-item" href="about.html">組織概要</a>
                     <a class="navbar-item" href="divisions.html">部隊紹介</a>
@@ -102,27 +130,34 @@
         </div>
     </section>
 
-    <section class="section">
+    <section class="info-cards">
         <div class="container">
             <div class="columns is-centered">
+                
                 <div class="column is-5">
                     <div class="info-card">
-                        <h3 class="title is-4">春季特別交通安全運動の実施</h3>
-                        <p class="mb-4">実施期間: 2026年4月1日 〜 4月15日</p>
-                        <p>サンアンドレアス州知事の通達に基づき、州内主要幹線道路にて速度超過、飲酒運転の取締を強化します。</p>
+                        <div class="icon-box">
+                            <i class="fas fa-traffic-light"></i> </div>
+                        <h3 class="title is-4">交通違反取締月間</h3>
+                        <p class="subtitle is-6">実施期間: 2026年4月1日 〜 4月30日</p>
+                        <p>春の交通安全運動に伴い、州内全域にて速度超過、信号無視の取締を強化します。安全運転を心がけてください。</p>
                         <br>
                         <a href="about.html" class="button is-dark is-fullwidth">詳細を確認</a>
                     </div>
                 </div>
+
                 <div class="column is-5">
                     <div class="info-card">
-                        <h3 class="title is-4">港湾地区治安強化対策</h3>
-                        <p class="mb-4">対象エリア: Port of Los Santos 全域</p>
-                        <p>貨物盗難事件の増加を受け、州警察港湾部隊はパトロール頻度を引き上げ、治安維持を徹底します。</p>
+                        <div class="icon-box">
+                            <i class="fas fa-shield-alt"></i> </div>
+                        <h3 class="title is-4">広域パトロール強化</h3>
+                        <p class="subtitle is-6">対象: 港湾部、パロミノ・ハイウェイ</p>
+                        <p>最近の犯罪傾向に基づき、深夜帯の港湾地区および都市間高速道路での巡回頻度を引き上げ、治安維持に努めます。</p>
                         <br>
                         <a href="divisions.html" class="button is-dark is-fullwidth">詳細を確認</a>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -133,8 +168,8 @@
                 <div class="column is-9">
                     <h2 class="title is-2">Slow Down, Move Over.</h2>
                     <p class="subtitle is-5">
-                        緊急車両等が停車している傍を通過する際、運転者は必ず速度を落とし、<br>
-                        可能な限り車線を変更する義務があります。
+                        緊急車両や道路管理車両が停車している傍を通過する際は、<br>
+                        必ず速度を落とし、可能な限り車線を変更してください。それが人命を救います。
                     </p>
                 </div>
                 <div class="column has-text-centered">
@@ -142,11 +177,14 @@
                 </div>
             </div>
         </div>
+        <div class="car-icon-bg">
+            <i class="fas fa-car-police"></i>
+        </div>
     </section>
 
     <footer class="footer has-background-black has-text-grey-light">
         <div class="content has-text-centered">
-            <p>© 2026 Los Santos State Trooper.</p>
+            <p>© 2026 Los Santos State Trooper. <br>このサイトはゲーム内ロールプレイ用の架空の組織のものです。</p>
         </div>
     </footer>
 
