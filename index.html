@@ -7,22 +7,22 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* ★サイト全体を太字(700)に設定★ */
+        /* 全体は標準(400) */
         body {
             font-family: 'Noto Sans JP', sans-serif;
-            font-weight: 700;
+            font-weight: 400;
             background-color: #f5f5f5;
             color: #1a1a1a;
         }
 
         .navbar.is-dark { background-color: #1a1a1a; }
-        .navbar-item { font-weight: 900 !important; color: white !important; }
+        .navbar-item { font-weight: 700 !important; color: white !important; }
 
         /* ヘッダー画像セクション */
         .hero {
@@ -34,17 +34,17 @@
             color: white !important;
         }
 
-        /* ★メインコピーを極太(900)に★ */
+        /* ★メインタイトルを極太(900)に★ */
         .hero .title { 
             color: white !important; 
             font-weight: 900; 
-            font-size: 4.5rem; /* より大きく */
+            font-size: 4.5rem;
             text-shadow: 3px 3px 6px rgba(0,0,0,0.8); 
             letter-spacing: -0.02rem;
         }
         .hero .subtitle { 
             color: white !important; 
-            font-weight: 700;
+            font-weight: 400;
             font-size: 1.8rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.8); 
             line-height: 1.6;
@@ -54,12 +54,12 @@
         .info-card {
             background: white;
             padding: 30px;
-            border-radius: 0; /* 角をあえて角張らせて硬い印象に */
+            border-radius: 0;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             height: 100%;
             border-top: 6px solid #002d62; 
         }
-        .info-card .title { font-weight: 900; margin-bottom: 1rem; }
+        .info-card .title { font-weight: 700; margin-bottom: 1rem; }
 
         /* 青い横長バー */
         .blue-banner {
@@ -68,8 +68,12 @@
             padding: 50px 0;
             border-top: 2px solid #003d82;
         }
+        /* ★バーのタイトルも極太(900)★ */
         .blue-banner .title { color: white !important; font-weight: 900; }
-        .blue-banner .subtitle { color: white !important; font-weight: 700; opacity: 0.9; }
+        .blue-banner .subtitle { color: white !important; font-weight: 400; opacity: 0.9; }
+
+        /* ★詳しく確認ボタンを太字(900)★ */
+        .button.is-large { font-weight: 900; }
 
         footer { font-weight: 700; }
     </style>
@@ -140,7 +144,7 @@
                     </p>
                 </div>
                 <div class="column has-text-centered">
-                    <a href="recruit.html" class="button is-white is-outlined is-large">詳しく確認</a>
+                    <a href="law.html" class="button is-white is-outlined is-large">詳しく確認</a>
                 </div>
             </div>
         </div>
