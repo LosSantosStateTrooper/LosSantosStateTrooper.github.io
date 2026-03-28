@@ -6,7 +6,7 @@
     <title>LSST | ロスサントス州警察</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <style>
-        html { scroll-behavior: smooth; } /* スムーズスクロールを有効化 */
+        html { scroll-behavior: smooth; } /* スムーズスクロール（一応残します） */
         .hero {
             /* ここにパトカーのスクショ画像を背景に設定してください */
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), 
@@ -20,6 +20,12 @@
         .section-title { border-left: 5px solid #0056b3; padding-left: 15px; margin-bottom: 20px; font-weight: bold; }
         .navbar.is-dark { background-color: #1a1a1a; }
         .navbar-item { font-weight: bold; }
+        /* アイコン画像のスタイル調整 */
+        .navbar-brand .navbar-item img {
+            max-height: 40px; /* アイコンの高さを制限 */
+            margin-right: 10px; /* 文字との間隔 */
+            border-radius: 5px; /* 少し角を丸くする（好みで） */
+        }
     </style>
 </head>
 <body>
@@ -27,17 +33,18 @@
     <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand">
-                <a class="navbar-item" href="#">
+                <a class="navbar-item" href="index.html">
+                    <img src="icon.jpg" alt="LSST ICON">
                     <span style="color: #3273dc;">LS</span>ST 公式ポータル
                 </a>
             </div>
             
             <div id="navbarMenu" class="navbar-menu is-active">
                 <div class="navbar-end">
-                    <a class="navbar-item" href="#about">組織概要</a>
-                    <a class="navbar-item" href="#divisions">部隊紹介</a>
-                    <a class="navbar-item" href="#gallery">ギャラリー</a>
-                    <a class="navbar-item has-text-link" href="#recruit" style="background: rgba(255,255,255,0.1);">入隊申請はこちら</a>
+                    <a class="navbar-item" href="about.html">組織概要</a>
+                    <a class="navbar-item" href="divisions.html">部隊紹介</a>
+                    <a class="navbar-item" href="gallery.html">ギャラリー</a>
+                    <a class="navbar-item has-text-link" href="recruit.html" style="background: rgba(255,255,255,0.1);">入隊申請はこちら</a>
                 </div>
             </div>
         </div>
@@ -49,73 +56,7 @@
                 <h1 class="title is-1">Los Santos State Trooper</h1>
                 <p class="subtitle is-3">港から田舎まで、ロスサントス全域をカバーする精鋭部隊</p>
                 <br>
-                <a href="#about" class="button is-link is-large is-rounded">詳しく知る</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="title is-3 section-title">組織概要 - About Us</h2>
-            <div class="columns">
-                <div class="column">
-                    <p class="is-size-5">
-                        LSST（ロスサントス州警察）は、サンアンドレアス州における広域的な法執行を目的とした組織です。
-                        市警（LSPD）や保安官（LSSD）の枠組みを超え、州全域のハイウェイおよび未編入地域の治安を維持します。
-                    </p>
-                </div>
-                <div class="column">
-                    <p>
-                        私たちの最大の特徴は<strong>「機動力」</strong>と<strong>「広大な管轄」</strong>です。
-                        南のロスサントス港から、北部の険しい山岳地帯まで、境界を意識することなく迅速に現場へ急行します。
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="divisions" class="section has-background-white-ter">
-        <div class="container">
-            <h2 class="title is-3 section-title">部隊紹介 - Divisions</h2>
-            <div class="columns is-multiline">
-                <div class="column is-6">
-                    <div class="box">
-                        <h3 class="title is-4">高速道路パトロール隊</h3>
-                        <p>LS County内の主要なフリーウェイを24時間監視。高速車両による追跡や事故対応を専門とします。</p>
-                    </div>
-                </div>
-                <div class="column is-6">
-                    <div class="box">
-                        <h3 class="title is-4">広域警ら部隊</h3>
-                        <p>港湾地区、地方の町、山岳地帯などを巡回。コミュニティの安全を守り、境界のない法執行を行います。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="gallery" class="section">
-        <div class="container">
-            <h2 class="title is-3 section-title">活動記録 - Gallery</h2>
-            <p>※ ここに活動中のスクリーンショットを並べると人が集まりやすくなります。</p>
-            <div class="columns is-multiline">
-                <div class="column is-4"><figure class="image is-4by3"><img src="https://via.placeholder.com/800x600?text=Activity+1" alt=""></figure></div>
-                <div class="column is-4"><figure class="image is-4by3"><img src="https://via.placeholder.com/800x600?text=Activity+2" alt=""></figure></div>
-                <div class="column is-4"><figure class="image is-4by3"><img src="https://via.placeholder.com/800x600?text=Activity+3" alt=""></figure></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="recruit" class="section has-background-dark has-text-white">
-        <div class="container has-text-centered">
-            <h2 class="title is-2 has-text-white">採用情報 - Recruitment</h2>
-            <p class="subtitle is-4 has-text-grey-light">共にロスサントスの平和を守りませんか？</p>
-            <div class="box has-background-black-ter has-text-white">
-                <p class="is-size-5"><strong>求める人物像：</strong> 常識があり、ロールプレイを尊重できる方。初心者・経験者問わず歓迎。</p>
-                <hr>
-                <p>現在、Discordサーバーにて入隊申請を受け付けています。</p>
-                <br>
-                <a href="https://discord.gg/YOUR_INVITE_LINK" target="_blank" class="button is-link is-large">Discordに参加して申請する</a>
+                <a href="about.html" class="button is-link is-large is-rounded">組織について詳しく知る</a>
             </div>
         </div>
     </section>
