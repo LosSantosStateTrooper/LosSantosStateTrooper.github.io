@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>交通法典・罰則規定 | LSST</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* 全ページ共通：すべて太字(700) */
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 700 !important;
+            background-color: #f5f5f5;
+            color: #1a1a1a;
+            letter-spacing: 0.03rem;
+        }
+
+        * {
+            font-weight: 700 !important;
+        }
+
+        /* ナビゲーションバー */
+        .navbar.is-dark { background-color: #1a1a1a; }
+        .navbar-item { color: white !important; font-weight: 900 !important; }
+
+        /* 下層ページ用ヘッダー（policeStation4.png背景） */
+        .hero.is-small-page {
+            background: linear-gradient(rgba(0, 20, 50, 0.8), rgba(0, 0, 0, 0.6)), 
+                        url('policeStation4.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 100px 0 60px 0;
+            color: white !important;
+        }
+        .hero.is-small-page .title { 
+            color: white !important; 
+            font-weight: 900 !important; 
+            font-size: 3.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            letter-spacing: 0.1rem;
+        }
+
+        /* コンテンツセクション */
+        .content-section { padding: 60px 0; }
+        
+        .law-card {
+            background: white;
+            border-radius: 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            border-left: 10px solid #d32f2f; /* 警告・法律をイメージする赤 */
+        }
+        .law-header {
+            padding: 20px 30px;
+            background-color: #f9f9f9;
+            border-bottom: 2px solid #eee;
+        }
+        .law-body { padding: 30px; }
+        .law-title { font-size: 1.8rem; font-weight: 900 !important; color: #d32f2f; }
+
+        /* 罰則テーブル */
+        .table th { background-color: #f0f0f0; vertical-align: middle; }
+        .fine-text { color: #d32f2f; font-weight: 900 !important; }
+        .jail-text { color: #1a1a1a; font-weight: 900 !important; }
+
+        footer { background-color: #000 !important; padding: 40px 0; }
+        footer p { color: #ccc !important; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar is-dark is-fixed-top">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="index.html">
+                    <img src="icon.png" alt="LSST ICON">
+                    <span style="color: #3273dc; margin-left: 5px;">LS</span>ST 公式ポータル
+                </a>
+            </div>
+            <div class="navbar-menu is-active">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="about.html">組織概要</a>
+                    <a class="navbar-item" href="divisions.html">部隊紹介</a>
+                    <a class="navbar-item" href="gallery.html">ギャラリー</a>
+                    <a class="navbar-item" href="recruit.html">入隊申請</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero is-small-page">
+        <div class="container has-text-centered">
+            <h1 class="title">交通法典・罰則規定</h1>
+            <p class="subtitle is-4" style="color: #3273dc !important;">San Andreas Vehicle Code & Penalties</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            
+            <div class="columns is-centered">
+                <div class="column is-10">
+                    
+                    <div class="notification is-warning is-light mb-6" style="border-left: 10px solid #ffdd57;">
+                        <p>本規定はサンアンドレアス州内における公共の安全を確保するためのものです。Trooperは現場の状況に基づき、裁量を持って法を執行します。</p>
+                    </div>
+
+                    <div class="law-card">
+                        <div class="law-header">
+                            <h2 class="law-title">速度超過 (Speeding)</h2>
+                        </div>
+                        <div class="law-body">
+                            <table class="table is-bordered is-fullwidth">
+                                <thead>
+                                    <tr>
+                                        <th>超過速度</th>
+                                        <th>反則金</th>
+                                        <th>備考</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>15mph未満</td>
+                                        <td class="fine-text">$250</td>
+                                        <td>警告で済む場合あり</td>
+                                    </tr>
+                                    <tr>
+                                        <td>15mph - 30mph</td>
+                                        <td class="fine-text">$550</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>30mph以上</td>
+                                        <td class="fine-text">$1,200</td>
+                                        <td>無謀運転として検挙</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="law-card" style="border-left-color: #1a1a1a;">
+                        <div class="law-header">
+                            <h2 class="law-title" style="color: #1a1a1a;">重大な交通違反</h2>
+                        </div>
+                        <div class="law-body">
+                            <table class="table is-bordered is-fullwidth">
+                                <thead>
+                                    <tr>
+                                        <th>違反項目</th>
+                                        <th>反則金</th>
+                                        <th>最大禁錮</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>飲酒・薬物運転 (DUI)</td>
+                                        <td class="fine-text">$2,500</td>
+                                        <td class="jail-text">15ヶ月</td>
+                                    </tr>
+                                    <tr>
+                                        <td>警察車両からの逃走 (Evading)</td>
+                                        <td class="fine-text">$5,000</td>
+                                        <td class="jail-text">25ヶ月</td>
+                                    </tr>
+                                    <tr>
+                                        <td>無免許・無車検運転</td>
+                                        <td class="fine-text">$1,500</td>
+                                        <td class="jail-text">-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>公務執行妨害</td>
+                                        <td class="fine-text">$3,000</td>
+                                        <td class="jail-text">20ヶ月</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="box has-background-dark has-text-white p-6">
+                        <h3 class="title is-4 has-text-white">ミランダ警告 (Miranda Warning)</h3>
+                        <p class="is-size-6 mb-4">逮捕時、Trooperは以下の権利を対象者に告知しなければなりません。</p>
+                        <blockquote class="has-text-dark" style="background: #eee; padding: 20px; border-radius: 5px;">
+                            「あなたには黙秘権がある。あなたの供述は、法廷であなたに不利な証拠として用いられる可能性がある。あなたには弁護士の立会いを求める権利がある。もし弁護士を雇う資力がなければ、公選弁護人が選任される。理解したか？」
+                        </blockquote>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>© 2026 Los Santos State Trooper. <br>このサイトはゲーム内ロールプレイ用の架空の組織のものです。</p>
+        </div>
+    </footer>
+
+</body>
+</html>
