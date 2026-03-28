@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
+        /* 全ページ共通：すべて太字(700) */
         body {
             font-family: 'Noto Sans JP', sans-serif;
             font-weight: 700 !important;
@@ -20,16 +21,22 @@
             color: #1a1a1a;
         }
 
-        * { font-weight: 700 !important; }
+        /* 全ての要素に太字を適用 */
+        * {
+            font-weight: 700 !important;
+        }
 
+        /* ナビゲーションバー（indexと完全一致） */
         .navbar.is-dark { background-color: #1a1a1a; }
         .navbar-item { color: white !important; font-weight: 900 !important; }
 
+        /* 下層ページ用ヘッダー */
         .hero.is-small-page {
             background: linear-gradient(rgba(0, 20, 50, 0.8), rgba(0, 0, 0, 0.6)), 
-                        url('top_bg.png');
+                        url('policeStation1.jpg'); /* ★指定の画像に変更★ */
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             padding: 100px 0 60px 0;
             color: white !important;
         }
@@ -40,6 +47,7 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
         }
 
+        /* 部隊紹介コンテンツ */
         .content-section { padding: 60px 0; }
         
         .division-card {
@@ -50,13 +58,21 @@
             border-left: 10px solid #002d62;
             transition: transform 0.2s;
         }
-        .division-card:hover { transform: translateX(10px); }
-        .division-header { padding: 20px 30px; background-color: #f9f9f9; border-bottom: 1px solid #eee; }
+        .division-card:hover {
+            transform: translateX(10px);
+        }
+        .division-header {
+            padding: 20px 30px;
+            background-color: #f9f9f9;
+            border-bottom: 1px solid #eee;
+        }
         .division-body { padding: 30px; }
         .division-name { font-size: 1.8rem; font-weight: 900 !important; color: #002d62; }
         .division-en { font-size: 1rem; color: #666; margin-bottom: 10px; }
 
+        /* 各部隊の識別タグ */
         .tag.is-division { background-color: #002d62; color: white; font-weight: 900 !important; }
+        .tag.is-investigation { background-color: #4a4a4a; color: white; font-weight: 900 !important; }
         .tag.is-special { background-color: #d32f2f; color: white; font-weight: 900 !important; }
         .tag.is-tactical { background-color: #1a1a1a; color: white; font-weight: 900 !important; }
 
@@ -88,12 +104,13 @@
     <section class="hero is-small-page">
         <div class="container has-text-centered">
             <h1 class="title">部隊紹介</h1>
-            <p class="subtitle is-4" style="color: #3273dc !important;">Divisions & Professional Units</p>
+            <p class="subtitle is-4" style="color: #3273dc !important;">Divisions & Specialized Units</p>
         </div>
     </section>
 
     <section class="content-section">
         <div class="container">
+            
             <div class="columns is-centered is-multiline">
                 
                 <div class="column is-10">
@@ -112,7 +129,7 @@
                 <div class="column is-10">
                     <div class="division-card" style="border-left-color: #4a4a4a;">
                         <div class="division-header">
-                            <span class="tag is-division">INVESTIGATION</span>
+                            <span class="tag is-investigation">INVESTIGATION</span>
                             <h2 class="division-name">刑事部 / 犯罪捜査局</h2>
                             <p class="division-en">Criminal Investigative Services (CIS)</p>
                         </div>
@@ -152,16 +169,17 @@
                     <div class="division-card" style="border-left-color: #1a1a1a;">
                         <div class="division-header">
                             <span class="tag is-tactical">TACTICAL SUPPORT</span>
-                            <h2 class="division-name">機動強襲班</h2>
+                            <h2 class="division-name">機動強襲・特殊支援班</h2>
                             <p class="division-en">Tactical Assistance & Coordination (TAC)</p>
                         </div>
                         <div class="division-body">
-                            <p>逃走車両の強制停止（PITマニューバ）や、市街地・荒野を問わない執拗な追跡、現場の物理的封鎖を専門とする実力行使部隊です。ハイテク機器に頼らず、隊員の練度とドライビングテクニック、そして徹底した連携によって容疑者の逃げ道を断ちます。</p>
+                            <p>逃走車両の強制停止（PITマニューバ）や、市街地・荒野を問わない執拗な追跡、現場の物理封鎖を専門とする実力行使部隊です。隊員の練度とドライビングテクニック、徹底した連携によって容疑者の逃げ道を断ちます。</p>
                         </div>
                     </div>
                 </div>
 
             </div>
+
         </div>
     </section>
 
