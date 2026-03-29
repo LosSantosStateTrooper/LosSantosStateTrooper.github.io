@@ -78,6 +78,18 @@
         .blue-banner .title { color: white !important; font-weight: 900 !important; }
         .blue-banner .subtitle { color: white !important; opacity: 1; }
 
+        /* 連絡先セクション（新規追加） */
+        .contact-info {
+            background-color: #00224a; /* より深い紺色 */
+            color: white;
+            padding: 60px 0;
+        }
+        .contact-info .title { color: white !important; font-weight: 900 !important; }
+        .contact-info p { font-weight: 700 !important; }
+        .contact-item { display: flex; align-items: center; justify-content: center; }
+        .contact-icon { font-size: 2.5rem; margin-right: 15px; }
+        .emergency-number { color: #ffdd57; font-size: 2rem; }
+
         /* ボタンも極太 */
         .button { font-weight: 900 !important; }
 
@@ -101,6 +113,7 @@
                     <a class="navbar-item" href="divisions.html">部隊紹介</a>
                     <a class="navbar-item" href="gallery.html">ギャラリー</a>
                     <a class="navbar-item" href="recruit.html">入隊申請</a>
+                    <a class="navbar-item" href="license.html">銃器申請</a>
                 </div>
             </div>
         </div>
@@ -153,6 +166,49 @@
                 <div class="column has-text-centered">
                     <a href="law.html" class="button is-white is-outlined is-large">詳しくを確認</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-info">
+        <div class="container has-text-centered">
+            <h2 class="title is-3 mb-6">Contact Information</h2>
+            
+            <div class="columns is-centered">
+                <div class="column">
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt contact-icon"></i>
+                        <div class="has-text-left">
+                            <p class="is-size-6 mb-1">In City Emergency</p>
+                            <p class="emergency-number">911</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="contact-item">
+                        <i class="fas fa-phone contact-icon"></i>
+                        <div class="has-text-left">
+                            <p class="is-size-6 mb-1">Non-Emergency</p>
+                            <p class="is-size-4">TBD</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <div class="has-text-left">
+                            <p class="is-size-6 mb-1">Email</p>
+                            <p class="is-size-5">LSST@outlook.jp</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6">
+                <i class="fas fa-map-marker-alt mr-2"></i>
+                <span class="is-size-5">704 San Andreas Avenue, Los Santos, San Andreas</span>
             </div>
         </div>
     </section>
